@@ -5,5 +5,5 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class LookingforTastersPage extends AbstarctPage{
+public class LookingforTastersPage extends AbstractPage {
 }

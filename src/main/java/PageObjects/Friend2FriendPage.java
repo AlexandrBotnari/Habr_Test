@@ -5,5 +5,5 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Friend2FriendPage extends AbstarctPage{
+public class Friend2FriendPage extends AbstractPage {
 }

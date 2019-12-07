@@ -5,5 +5,5 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class KidsPartiesPage extends AbstarctPage{
+public class KidsPartiesPage extends AbstractPage {
 }

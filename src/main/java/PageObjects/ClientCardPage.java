@@ -5,5 +5,5 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class ClientCardPage extends AbstarctPage{
+public class ClientCardPage extends AbstractPage {
 }
