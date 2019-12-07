@@ -5,5 +5,5 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class CarporateClientPage extends AbstarctPage{
+public class CorporateClientPage extends AbstractPage {
 }
