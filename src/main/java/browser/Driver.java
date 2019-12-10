@@ -2,47 +2,31 @@ package browser;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.ie.InternetExplorerOptions;
 
-import java.util.Objects;
-import java.util.Properties;
-import java.util.concurrent.TimeUnit;
-
-import static org.openqa.selenium.remote.BrowserType.FIREFOX;
-
+import static browser.PropertyReader.getProperty;
 
 public class Driver {
 
-    public static org.openqa.selenium.WebDriver driver = null;
-    private static Properties properties = null;
 
+    private static PropertyReader propertyReader;
+    private static WebDriver driver;
 
-    static {
-        try {
-            properties = new Properties();
-            properties.load(Driver.class.getClassLoader().getResourceAsStream("application.properties"));
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    public static String getProperty(String key) {
-        return properties == null ? null : properties.getProperty(key, "");
-    }
-
+   public static void createDriver(DriverType driverType){
+       driver = DriverFactory.instantiateDriver(driverType);
+   }
 
     public static WebDriver getDriver() {
-        if (driver == null) {
-            System.setProperty("webdriver.chrome.driver", properties.getProperty("chrome.path"));
-            driver = new ChromeDriver();
-            driver.manage().window().maximize();
-            driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        }
         return driver;
-
     }
 
-     }
+    public static void closeDriver() {
+        if (driver != null) {
+            driver.close();
+        }
+    }
+}
+
 
 

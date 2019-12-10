@@ -1,6 +1,6 @@
 package pageObjects.services;
 
-import pageObjects.AbstractPage;
+import pageObjects.Page;
 import lombok.Getter;
 import lombok.Setter;
 import org.openqa.selenium.WebElement;
@@ -10,7 +10,7 @@ import java.util.List;
 
 @Getter
 @Setter
-public class KidsPartiesPage extends AbstractPage {
+public class KidsPartiesPage extends Page {
 
     @FindBy(xpath = "//div[@class='img-header__title']")
     private WebElement image_textHolder;
