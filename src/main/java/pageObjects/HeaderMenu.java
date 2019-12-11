@@ -10,6 +10,10 @@ import java.util.List;
 @Getter
 public class HeaderMenu {
 
+    public HeaderMenu() {
+        super();
+    }
+
     @FindBy(xpath = "//a[@class='bag__tobag']")
     private WebElement shoppingCart;
 
