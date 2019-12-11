@@ -5,6 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class PrivateEventsPage extends AbstractPage {
+    public PrivateEventsPage() {
+        super();
+    }
 
     @FindBy(xpath = "//div[@class='img-header__title']")
     private WebElement image_textHolder;

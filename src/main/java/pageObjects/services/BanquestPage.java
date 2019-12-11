@@ -12,6 +12,9 @@ import java.util.List;
 @Getter
 @Setter
 public class BanquestPage extends AbstractPage {
+    public BanquestPage() {
+        super();
+    }
 
     @FindBy(xpath = "//div[@class='img-header__title']")
     private WebElement image_textHolder;

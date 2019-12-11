@@ -9,7 +9,9 @@ import org.openqa.selenium.support.FindBy;
 @Getter
 @Setter
 public class Friend2FriendPage extends AbstractPage {
-
+    public Friend2FriendPage() {
+        super();
+    }
     @FindBy(xpath = "//h1/strong")
     private WebElement textHeader;
 
