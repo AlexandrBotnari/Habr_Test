@@ -17,16 +17,7 @@ public class HeaderMenu {
     private WebElement languages;
 
     @FindBy(xpath = "//a[@class='prodimgp']/div[contains(text(),'Lunch')]")
-    private WebElement lunchButton;
-
-    @FindBy(xpath = "//div[@class='product__header']")
-    private List<WebElement> productLunchNames;
-
-    @FindBy(xpath = "//div[@class='product__buy']")
-    private List<WebElement> buyProductLunch;
-
-    @FindBy(xpath = "//div[@class='product__date']")
-    private List<WebElement> productDateLunch;
+    private WebElement lunchButton1;
 
     @FindBy(xpath = "//div[@class='selphonenum__curr']")
     private WebElement cityCurrent;
@@ -37,28 +28,15 @@ public class HeaderMenu {
     @FindBy(xpath = "//div/ul/li/span[contains(text(),'C')]")
     private WebElement chisinauCity;
 
-    @FindBy(xpath = "//div[@class='bag__header']")
-    private WebElement shoppingCartDDHeader;
+    @FindBy(xpath = "//ul[@class='dropmenu']//a[contains(@href,'restaurants')]")
+    private WebElement restaurants;
 
-    @FindBy(xpath = "//a[@class='bag__list-close']")
-    private List<WebElement> shoppingCartDDProductsDelete;
+    @FindBy(xpath = "//ul[@class='dropmenu']//a[contains(@href,'news')]")
+    private WebElement news;
 
-    @FindBy(xpath = "//div[@class='bag__list-header']")
-    private List<WebElement> shoppingCartDDProductsHeader;
+    @FindBy(xpath = "//ul[@class='dropmenu']//a[contains(@href,'cariera')]")
+    private WebElement career;
 
-    @FindBy(xpath = "//a[@class='selcount__action selcount__minus'")
-    private List<WebElement> shoppingCartDDProductsMinus;
 
-    @FindBy(xpath = "//a[@class='selcount__action selcount__plus'")
-    private List<WebElement> shoppingCartDDProductsPlus;
-
-    @FindBy(xpath = "//a[@class= 'button button_end' ]")
-    private WebElement orderButton;
-
-    @FindBy(xpath = "//span[@class='cart_total']")
-    private WebElement totalPrice;
-
-    @FindBy(xpath = "//span[@class='cart_delivery']")
-    private WebElement deliveryPrice;
 
 }
