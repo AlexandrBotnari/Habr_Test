@@ -10,6 +10,10 @@ import org.openqa.selenium.support.FindBy;
 @Setter
 public class Friend2FriendPage extends Page {
 
+    public Friend2FriendPage() {
+        super();
+    }
+
     @FindBy(xpath = "//h1/strong")
     private WebElement textHeader;
 

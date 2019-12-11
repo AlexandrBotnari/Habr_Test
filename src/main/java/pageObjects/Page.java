@@ -4,18 +4,16 @@ import browser.Driver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
+import static browser.Driver.getDriver;
+
 
 public abstract class Page {
-
-    private Driver driver;
 
     public Page(){
         init();
     }
 
-
     public void init() {
-
-        PageFactory.initElements(driver.getDriver(), this);
+        PageFactory.initElements(getDriver(), this);
     }
 }
