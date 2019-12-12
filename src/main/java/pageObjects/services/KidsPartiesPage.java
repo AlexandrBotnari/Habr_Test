@@ -12,6 +12,10 @@ import java.util.List;
 @Setter
 public class KidsPartiesPage extends Page {
 
+    public KidsPartiesPage() {
+        super();
+    }
+
     @FindBy(xpath = "//div[@class='img-header__title']")
     private WebElement image_textHolder;
 

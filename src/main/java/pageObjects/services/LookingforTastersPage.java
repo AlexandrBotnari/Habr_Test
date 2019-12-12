@@ -10,6 +10,10 @@ import org.openqa.selenium.support.FindBy;
 @Setter
 public class LookingforTastersPage extends Page {
 
+    public LookingforTastersPage() {
+        super();
+    }
+
     @FindBy(xpath = "//div[@class='img-header__title']")
     private WebElement image_textHolder;
 
