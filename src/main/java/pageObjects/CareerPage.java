@@ -1,4 +1,4 @@
 package pageObjects;
 
-public class CareerPage {
+public class CareerPage  {
 }

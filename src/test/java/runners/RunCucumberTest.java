@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
         features = "classpath:features/ChangeLanguge.features",
         plugin = {"pretty", "html:target/cucumber-html-report", "json:target/cucumber.json},"},
         glue = {"classpath:steps","classpath:hooks"},
-        tags = "@tag1",
+        tags = "@cl",
         snippets = SnippetType.CAMELCASE
 )
 
