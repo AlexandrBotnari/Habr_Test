@@ -1,4 +1,5 @@
 package pageObjects;
 
-public class RestaurantsPage {
+public class RestaurantsPage  extends AbstractPage{
+
 }

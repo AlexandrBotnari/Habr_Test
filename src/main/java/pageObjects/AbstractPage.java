@@ -18,7 +18,7 @@ protected String url;
     }
 
     @Override
-    public String getUrl() {
+    public String url() {
         return url;
     }
 }

@@ -18,7 +18,8 @@ public class LookingforTastersPage extends AbstractPage {
     private WebElement image_textHolder;
 
     @Override
-    public void url() {
+    public String url() {
 url = "/we_are_looking_for_tasters";
+        return null;
     }
 }

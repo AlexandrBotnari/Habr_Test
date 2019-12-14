@@ -21,7 +21,8 @@ public class PrivateEventsPage extends AbstractPage {
     private WebElement headerOnPageRO;
 
     @Override
-    public void url() {
+    public String url() {
         url = "/private_events";
+        return null;
     }
 }
