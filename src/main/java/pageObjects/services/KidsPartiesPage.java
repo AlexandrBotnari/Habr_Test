@@ -35,7 +35,8 @@ public class KidsPartiesPage extends AbstractPage {
     private WebElement textHeader;
 
     @Override
-    public void url() {
+    public String url() {
         url = "/party";
+        return null;
     }
 }

@@ -32,14 +32,17 @@ public class HeaderMenu extends AbstractPage {
     @FindBy(xpath = "//ul[@class='dropmenu']//a[contains(@href,'cariera')]")
     private WebElement career;
 
+    @FindBy(xpath = "//a[@class='header__login-act active']")
+    private WebElement login;
     public HeaderMenu() {
         super();
     }
 
     @Override
-    public void url() {
+    public String url() {
         //assert na polnuiu shojesti
         url = "https://www.andys.md/en";
+        return url;
 
     }
 }

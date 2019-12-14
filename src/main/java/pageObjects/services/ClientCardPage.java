@@ -22,7 +22,8 @@ public class ClientCardPage extends AbstractPage {
     }
 
     @Override
-    public void url() {
+    public String url() {
         url = "/clients_card";
+        return null;
     }
 }
