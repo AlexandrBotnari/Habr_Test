@@ -1,6 +1,6 @@
 package pageObjects.services;
 
-import pageObjects.Page;
+import pageObjects.AbstractPage;
 import lombok.Getter;
 import lombok.Setter;
 import org.openqa.selenium.WebElement;
@@ -10,7 +10,7 @@ import java.util.List;
 
 @Getter
 @Setter
-public class KidsPartiesPage extends Page {
+public class KidsPartiesPage extends AbstractPage {
 
     public KidsPartiesPage() {
         super();
@@ -33,4 +33,9 @@ public class KidsPartiesPage extends Page {
 
     @FindBy(xpath = "//h1[@xpath='1']")
     private WebElement textHeader;
+
+    @Override
+    public void url() {
+        url = "/party";
+    }
 }
