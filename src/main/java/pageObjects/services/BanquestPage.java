@@ -1,7 +1,7 @@
 package pageObjects.services;
 
 
-import pageObjects.Page;
+import pageObjects.AbstractPage;
 import lombok.Getter;
 import lombok.Setter;
 import org.openqa.selenium.WebElement;
@@ -11,8 +11,10 @@ import java.util.List;
 
 @Getter
 @Setter
-public class BanquestPage extends Page {
-
+public class BanquestPage extends AbstractPage {
+    public BanquestPage() {
+        super();
+    }
     @FindBy(xpath = "//div[@class='img-header__title']")
     private WebElement image_textHolder;
 
@@ -31,4 +33,9 @@ public class BanquestPage extends Page {
     @FindBy(xpath = "//div[@class='restaurant__contacts']")
     private List<WebElement> tellNumbers;
 
+    @Override
+    public String url() {
+        url = "/events";
+        return null;
+    }
 }

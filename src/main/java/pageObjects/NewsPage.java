@@ -3,16 +3,17 @@ package pageObjects;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.nio.file.Watchable;
+public class NewsPage extends AbstractPage{
 
-public class NewsPage  extends Page{
-    public NewsPage() {super();
+    @FindBy(xpath = "(//div[@class='prevslist']//a[@class='button button_serv-next'])")
+    private WebElement seeMore;
+     @FindBy(xpath = "//a[@class='button button_cr']")
+     private WebElement backToNews;
+
+    @Override
+    public String url() {
+        url = "/news";
+        return url;
     }
-    @FindBy (xpath = "(//div[@class='prevslist']//a[@class='button button_serv-next'])")
-    private WebElement seeMoreButton;
 
-    @FindBy (xpath = "//a[@class='button button_cr']")
-    private  WebElement backToNewsButton;
-
-    String newsUrl = "news/";
 }

@@ -1,6 +1,6 @@
 package pageObjects.services;
 
-import pageObjects.Page;
+import pageObjects.AbstractPage;
 import lombok.Getter;
 import lombok.Setter;
 import org.openqa.selenium.WebElement;
@@ -8,11 +8,21 @@ import org.openqa.selenium.support.FindBy;
 
 @Getter
 @Setter
-public class Friend2FriendPage extends Page {
+public class Friend2FriendPage extends AbstractPage {
+
+    public Friend2FriendPage() {
+        super();
+    }
 
     @FindBy(xpath = "//h1/strong")
     private WebElement textHeader;
 
     @FindBy(xpath = "(//p/u/strong)[4]")
     private WebElement lastPoint;
+
+    @Override
+    public String url() {
+        url = "/regulations_of_the_loyalty_program_friends_2_friends";
+        return null;
+    }
 }

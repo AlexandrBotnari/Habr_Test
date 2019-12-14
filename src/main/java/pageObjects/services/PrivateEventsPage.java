@@ -1,10 +1,14 @@
 package pageObjects.services;
 
-import pageObjects.Page;
+import pageObjects.AbstractPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class PrivateEventsPage extends Page {
+public class PrivateEventsPage extends AbstractPage {
+
+    public PrivateEventsPage() {
+        super();
+    }
 
     @FindBy(xpath = "//div[@class='img-header__title']")
     private WebElement image_textHolder;
@@ -16,5 +20,9 @@ public class PrivateEventsPage extends Page {
     @FindBy(xpath = "//h1[contains(text(),'Serbează orice eveniment la ')]")
     private WebElement headerOnPageRO;
 
-
+    @Override
+    public String url() {
+        url = "/private_events";
+        return null;
+    }
 }
