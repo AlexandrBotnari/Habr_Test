@@ -1,10 +1,14 @@
-import browser.Driver;
-import browser.DriverType;
-import browser.PropertyReader;
-import org.junit.Before;
-import org.junit.Test;
+
+import org.testng.annotations.Test;
+
+import static browser.Driver.getDriver;
 
 
 public class test {
+
+    @Test
+    public  void start(){
+        getDriver();
+    }
 
 }
