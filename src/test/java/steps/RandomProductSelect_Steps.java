@@ -25,12 +25,22 @@ public class RandomProductSelect_Steps {
     @When("^User clicks on \"Menu\" button$")
     public void UserClicksOnMenuButton() {
         homePage.PressMenuButton();
+    }
+
+    @And("^\"Menu\" appears$")
+    public void MenuAppears(){
 
     }
 
-    @And("^Selects random category from \"Menu\" list$")
+
+    @Then("^Selects random category from \"Menu\" list$")
     public void SelectRandomCategoryFromMenu() throws InterruptedException {
         action.GetRandomCategory();
+    }
+
+    @And("^Category appears$")
+    public void CategoryAppears(){
+
     }
 
     @Then("^User adds random product from category to cart$")

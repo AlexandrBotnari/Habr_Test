@@ -28,6 +28,12 @@ public class HomePage extends AbstractPage {
     @FindBy(xpath = "//div[@class='bag__count cart_count']")
     private  WebElement cartCounter;
 
+    @FindBy(xpath = "//div[@class='bag__products']")
+    private WebElement CartButton;
+
+    public void PressCartButton(){
+        CartButton.click();
+    }
 
     public void PressMenuButton() {
         menuButton.click();

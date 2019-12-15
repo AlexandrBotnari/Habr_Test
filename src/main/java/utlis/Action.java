@@ -1,12 +1,14 @@
 package utlis;
 
 import pageObjects.AbstractPage;
+import pageObjects.CartPage;
 import pageObjects.MenuPage;
 
 
 
 public class Action extends AbstractPage {
 
+    CartPage cartPage = new CartPage();
     MenuPage menuPage = new MenuPage();
 
     public Action() {
@@ -21,5 +23,9 @@ public class Action extends AbstractPage {
 
     public void GetRandomProduct() throws InterruptedException {
         RandomListSelect.GetRandomFromList(menuPage.getProductList()).click();
+    }
+
+    public void RemoveRandomFromCart(){
+        RandomListSelect.GetRandomFromList(cartPage.getRemoveFromCart()).click();
     }
 }
