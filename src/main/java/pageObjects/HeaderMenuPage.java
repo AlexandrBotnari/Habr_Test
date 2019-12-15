@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 @Getter
-public class HeaderMenu extends AbstractPage {
+public class HeaderMenuPage extends AbstractPage {
 
     @FindBy(xpath = "//a[@class='bag__tobag']")
     private WebElement shoppingCart;
@@ -34,7 +34,7 @@ public class HeaderMenu extends AbstractPage {
 
     @FindBy(xpath = "//a[@class='header__login-act active']")
     private WebElement login;
-    public HeaderMenu() {
+    public HeaderMenuPage() {
         super();
     }
 

@@ -1,7 +1,7 @@
 Feature: Order lunch from Andy's pizza
 
   Background:
-    Given Open "Lunch" page
+    Given Open "Lunch"
 
     @Success
   Scenario:Add lunch to shopping cart(basket) at present day

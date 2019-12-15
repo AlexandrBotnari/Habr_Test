@@ -20,7 +20,7 @@ public class GeneralSteps {
 
     @Then("^\"([^\"]*)\" page is opened$")
     public void isOpened(String url) {
-        //reflection.currentPage(getUrl(),);
+        //reflection.currentPage(+);
 
     }
 
@@ -30,4 +30,6 @@ public class GeneralSteps {
         // Write code here that turns the phrase above into concrete actions
         throw new PendingException();
     }
+
+
 }

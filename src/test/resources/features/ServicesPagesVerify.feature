@@ -1,7 +1,8 @@
 Feature: User look through services information
-
+  Background:
+    Given "Home" page is opened
   Scenario: User open every services page
-    Given The Andy's pizza main page is displayed
+
     When user navigate to "Services" button
     Then dropdown menu appears
 
