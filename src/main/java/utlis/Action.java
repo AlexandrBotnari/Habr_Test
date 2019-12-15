@@ -5,11 +5,11 @@ import pageObjects.MenuPage;
 
 
 
-public class Actions extends AbstractPage {
+public class Action extends AbstractPage {
 
     MenuPage menuPage = new MenuPage();
 
-    public Actions() {
+    public Action() {
         super();
     }
 

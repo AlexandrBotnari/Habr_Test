@@ -23,19 +23,22 @@ public class MenuPage extends AbstractPage {
     }
 
     @FindBy(xpath = "//div[@class='modal-menu modal-menu_open']//a[*]")
-    private  List<WebElement> MenuList;
+    private  List<WebElement> menuList;
 
 
     @FindBy(xpath = "//div[@class='product__buy add_to_cart']")
-    private  List<WebElement> ProductList;
+    private  List<WebElement> productList;
+
+    @FindBy(xpath = "//div[@class='product__alert_msg']")
+    private  WebElement productAlertMessage;
 
 
     public  List<WebElement> getMenuList() {
-        return MenuList;
+        return menuList;
     }
 
     public  List<WebElement> getProductList() {
-        return ProductList;
+        return productList;
     }
 
 

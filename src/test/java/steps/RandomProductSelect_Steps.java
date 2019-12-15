@@ -8,8 +8,9 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import pageObjects.HomePage;
 import pageObjects.MenuPage;
-import utlis.Actions;
-import utlis.RandomListSelect;
+import utlis.Action;
+
+
 
 import static browser.Driver.getDriver;
 
@@ -18,7 +19,7 @@ import static browser.Driver.getDriver;
 public class RandomProductSelect_Steps {
 
     HomePage homePage = new HomePage();
-    Actions actions = new Actions();
+    Action action = new Action();
 
 
     @When("^User clicks on \"Menu\" button$")
@@ -29,12 +30,12 @@ public class RandomProductSelect_Steps {
 
     @And("^Selects random category from \"Menu\" list$")
     public void SelectRandomCategoryFromMenu() throws InterruptedException {
-        actions.GetRandomCategory();
+        action.GetRandomCategory();
     }
 
     @Then("^User adds random product from category to cart$")
     public void SelectRandomProduct() throws InterruptedException {
-        actions.GetRandomProduct();
+        action.GetRandomProduct();
         Thread.sleep(2000);
         HomePage.CartCounterAssertCheck();
 
