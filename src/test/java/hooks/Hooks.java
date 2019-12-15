@@ -15,12 +15,13 @@ public class Hooks {
         propertyReader = new PropertyReader();
         Driver.createDriver(DriverType.CHROME);
         Driver.getDriver().manage().window().maximize();
+        Driver.getDriver().get("https://www.andys.md/en");
     }
 
 
-    @After
-    public void after() throws Exception {
-        Driver.getDriver().quit();
-    }
+//    @After
+//    public void after() throws Exception {
+//        Driver.getDriver().quit();
+//    }
 
 }
