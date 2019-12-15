@@ -15,24 +15,27 @@ import static browser.Driver.getDriver;
 @Getter
 @Setter
 public class HomePage extends AbstractPage {
+
+    HomePage homePage;
+
     public HomePage() {
         super();
     }
 
     @FindBy(xpath = "//button[@class='button button_serv js-delivery-menu']")
-    private static WebElement MenuButton;
+    private  WebElement menuButton;
 
     @FindBy(xpath = "//div[@class='bag__count cart_count']")
-    private static WebElement CartCounter;
+    private  WebElement cartCounter;
 
 
-    public static void PressMenuButton() {
-        MenuButton.click();
+    public void PressMenuButton() {
+        menuButton.click();
 
     }
 
     public static void CartCounterAssertCheck() {
-        Assert.assertTrue(CartCounter.isDisplayed());
+   //     Assert.assertTrue(homePage.cartCounter.isDisplayed());
     }
 
 }

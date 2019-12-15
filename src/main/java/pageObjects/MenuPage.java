@@ -13,7 +13,6 @@ import utlis.RandomListSelect;
 
 import java.util.List;
 
-import static browser.Driver.getDriver;
 
 @Getter
 @Setter
@@ -24,21 +23,21 @@ public class MenuPage extends AbstractPage {
     }
 
     @FindBy(xpath = "//div[@class='modal-menu modal-menu_open']//a[*]")
-    private static List<WebElement> MenuList;
+    private  List<WebElement> MenuList;
 
 
-    @FindBy(xpath = "/html[1]/body[1]/div[4]/div[2]/div[1]/div[*]/div[4]")
-    private static List<WebElement> ProductList;
+    @FindBy(xpath = "//div[@class='product__buy add_to_cart']")
+    private  List<WebElement> ProductList;
 
-    public static void GetRandomCategory() {
-        RandomListSelect.GetRandomFromList(MenuPage.MenuList).click();
 
+    public  List<WebElement> getMenuList() {
+        return MenuList;
     }
 
-    public static void GetRandomProduct() {
-        RandomListSelect.GetRandomFromList(MenuPage.ProductList).click();
-
+    public  List<WebElement> getProductList() {
+        return ProductList;
     }
+
 
     private WebElement lunchButton1;
 

@@ -8,33 +8,33 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import pageObjects.HomePage;
 import pageObjects.MenuPage;
+import utlis.Actions;
+import utlis.RandomListSelect;
 
 import static browser.Driver.getDriver;
-import static pageObjects.HomePage.PressMenuButton;
-import static pageObjects.MenuPage.GetRandomCategory;
-import static pageObjects.MenuPage.GetRandomProduct;
+
 
 @Getter
 public class RandomProductSelect_Steps {
 
     HomePage homePage = new HomePage();
-    MenuPage menuPage = new MenuPage();
+    Actions actions = new Actions();
 
 
-    @When("^User clicks on \"([^\"]*)\" button$")
+    @When("^User clicks on \"Menu\" button$")
     public void UserClicksOnMenuButton() {
-        PressMenuButton();
+        homePage.PressMenuButton();
 
     }
 
-    @And("^Selects random category from \"([^\"]*)\" list$")
-    public void SelectRandomCategoryFromMenu() {
-        GetRandomCategory();
+    @And("^Selects random category from \"Menu\" list$")
+    public void SelectRandomCategoryFromMenu() throws InterruptedException {
+        actions.GetRandomCategory();
     }
 
     @Then("^User adds random product from category to cart$")
     public void SelectRandomProduct() throws InterruptedException {
-        GetRandomProduct();
+        actions.GetRandomProduct();
         Thread.sleep(2000);
         HomePage.CartCounterAssertCheck();
 
