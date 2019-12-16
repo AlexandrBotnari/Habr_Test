@@ -27,6 +27,7 @@ public class RandomProductSelect_Steps {
         homePage.PressMenuButton();
     }
 
+
     @And("^\"Menu\" appears$")
     public void MenuAppears(){
 
