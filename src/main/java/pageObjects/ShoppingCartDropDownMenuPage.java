@@ -1,10 +1,13 @@
 package pageObjects;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
-
+@Getter
+@Setter
 public class ShoppingCartDropDownMenuPage {
     @FindBy(xpath = "//div[@class='bag__header']")
     private WebElement shoppingCartDDHeader;
@@ -16,7 +19,7 @@ public class ShoppingCartDropDownMenuPage {
     private List<WebElement> shoppingCartDDProductsHeader;
 
     @FindBy(xpath = "//a[@class='selcount__action selcount__minus'")
-    private List<WebElement> shoppingCartDDProductsMinus;
+    private WebElement shoppingCartDDProductsMinus;
 
     @FindBy(xpath = "//a[@class='selcount__action selcount__plus'")
     private List<WebElement> shoppingCartDDProductsPlus;
