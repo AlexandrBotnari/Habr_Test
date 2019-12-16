@@ -12,4 +12,3 @@ Feature: Breakfast order
     Then "Breakfast" page is opened
     When user clicks on "Order" button
     Then warning message "This dish is available for order from 07:00 to 11:00" is displayed
-    `
