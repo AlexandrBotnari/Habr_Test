@@ -31,11 +31,15 @@ public class HeaderMenu extends AbstractPage {
     private WebElement news;
     @FindBy(xpath = "//ul[@class='dropmenu']//a[contains(@href,'cariera')]")
     private WebElement career;
-
     @FindBy(xpath = "//a[@class='header__login-act active']")
     private WebElement login;
+
     public HeaderMenu() {
         super();
+    }
+
+    public WebElement getBaltiCity() {
+        return baltiCity;
     }
 
     @Override

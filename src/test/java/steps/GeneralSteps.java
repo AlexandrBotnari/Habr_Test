@@ -27,7 +27,7 @@ public class GeneralSteps {
 
     @When("^user clicks on \"([^\"]*)\" button$")
     public void userClicksOnButton(String arg0) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
+
         throw new PendingException();
     }
 }

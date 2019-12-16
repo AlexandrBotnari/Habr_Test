@@ -2,6 +2,8 @@ package steps;
 
 import browser.Driver;
 import browser.DriverType;
+import cucumber.api.PendingException;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -10,21 +12,24 @@ import pageObjects.HeaderMenu;
 
 public class LunchMenuAndys_Steps {
 
-    @When("^user opens Andys website$")
-    public void useropenswebsite(){
+  
 
-        Driver.getDriver().get("https://www.andys.md/en");
+    @When("^customer tries to add lunch from current day$")
+    public void customerTriesToAddLunchFromCurrentDay() {
     }
 
-
-    @Then("^the website is displayed$")
-    public void theWebsiteIsDisplayed() {
-        //Assert.assertSame("Andys Pizza Menu - delivery of hot and tasty food to your home and office", (Driver.getDriver().getTitle() ));
-        Assert.assertNotNull((Driver.getDriver().getTitle() ));
+    @And("^at the available time$")
+    public void atTheAvailableTime() {
+        
     }
 
-    @Given("^3 non-stupid developers$")
-    public void nonStupidDevelopers() {
-Assert.assertNotNull(Driver.getDriver());
+    @Then("^the chosen lunch pack stores in the cart$")
+    public void theChosenLunchPackStoresInTheCart() {
+    }
+
+    @Then("^\"([^\"]*)\" is opened$")
+    public void isOpened(String arg0) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        throw new PendingException();
     }
 }

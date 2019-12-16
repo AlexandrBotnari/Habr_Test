@@ -1,6 +1,6 @@
 package steps;
 
-public class Banquets_Steps extends GeneralSteps {
+public class Banquets_Steps {
 
 }
 

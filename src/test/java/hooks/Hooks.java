@@ -15,6 +15,7 @@ public class Hooks {
         propertyReader = new PropertyReader();
         Driver.createDriver(DriverType.CHROME);
         Driver.getDriver().manage().window().maximize();
+        Driver.getDriver().get("https://www.andys.md/en");
     }
 
 

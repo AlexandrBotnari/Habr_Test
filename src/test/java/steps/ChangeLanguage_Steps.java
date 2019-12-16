@@ -1,5 +1,5 @@
 package steps;
 
-public class ChangeLanguageSteps {
+public class ChangeLanguage_Steps {
     //private void
 }
