@@ -12,14 +12,14 @@ import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import pageObjects.AbstractPage;
-import pageObjects.HeaderMenu;
+import pageObjects.HeaderMenuPage;
 import utlis.reflectionHelper.Reflection;
 
 import static browser.Driver.getDriver;
 
 public class MainPage_Steps {
 
-    HeaderMenu headerMenu = new HeaderMenu();
+    HeaderMenuPage headerMenuPage = new HeaderMenuPage();
 
     @Given("^The Andy's pizza main page is displayed$")
     public void theAndySPizzaMainPageIsDisplayed() {
@@ -32,23 +32,25 @@ public class MainPage_Steps {
 
 
     //Move to generic
+    @When("^user navigate on \"([^\"]*)\"$")
+    public void userNavigateOn(String element) {
+        Actions actions = new Actions(getDriver());
+        actions.moveToElement(headerMenuPage.getCityCurrent()).perform();
+    }
 
-//        Actions actions = new Actions(getDriver());
-//        actions.moveToElement(headerMenu.getCityCurrent()).perform();
 
-
-
-    @Then("^current \"(.*)\" field changes to chosen$")
+    @Then("^current \"([^\"]*)\" field changes to chosen$")
     public void currentLocationFieldChangesToChosen(String location) {
-        Assert.assertEquals(location,headerMenu.getCityCurrent().getText());
+        Assert.assertEquals(location,headerMenuPage.getCityCurrent().getText());
     }
 
     @Then("^drop down menu appears$")
     public void dropDownMenuAppears() {
 
-        Assert.assertTrue(headerMenu.getBaltiCity().isEnabled());
-        Assert.assertTrue(headerMenu.getChisinauCity().isEnabled());
-
+        Assert.assertTrue(headerMenuPage.getBaltiCity().isEnabled());
+        Assert.assertTrue(headerMenuPage.getChisinauCity().isEnabled());
+        Assert.assertTrue(headerMenuPage.getChisinauCity().isDisplayed());
+        Assert.assertTrue(headerMenuPage.getBaltiCity().isDisplayed());
     }
 
 //    @When("^user click on  ([^\"]*)$")

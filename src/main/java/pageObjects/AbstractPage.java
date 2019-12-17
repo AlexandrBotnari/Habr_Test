@@ -5,7 +5,7 @@ import org.openqa.selenium.support.PageFactory;
 import static browser.Driver.getDriver;
 
 
-public abstract class AbstractPage implements Page {
+public abstract class AbstractPage implements Page{
 
     protected String url;
 

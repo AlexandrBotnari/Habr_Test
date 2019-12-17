@@ -1,10 +1,10 @@
 Feature: User look through services information
-
+  Background:
+    Given "Home" page is opened
   Scenario: User open every services page
-    Given The Andy's pizza main page is displayed
-
     When user navigate on "Services"
     Then dropdown menu appears
+
     When user clicks on "Services" button
     Then "Private Events" is opened
 

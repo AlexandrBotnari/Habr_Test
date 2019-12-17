@@ -1,13 +1,14 @@
 package pageObjects;
 
+import org.junit.Assert;
+import org.openqa.selenium.By;
+import pageObjects.AbstractPage;
 import lombok.Getter;
 import lombok.Setter;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
 @Getter
 @Setter
-
 public class HomePage extends AbstractPage {
 
     @FindBy(xpath = "//button[@class='button button_serv js-delivery-menu']")
@@ -30,18 +31,10 @@ public class HomePage extends AbstractPage {
         //     Assert.assertTrue(homePage.cartCounter.isDisplayed());
     }
 
-    public void PressCartButton() {
-        CartButton.click();
-    }
-
-    public void PressMenuButton() {
-        menuButton.click();
-
-    }
-
     @Override
     public String getUrl() {
         url = "https://www.andys.md/en";
         return url;
     }
+
 }

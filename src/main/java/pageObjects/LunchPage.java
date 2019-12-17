@@ -5,7 +5,11 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-public class LunchPage {
+public class LunchPage  extends AbstractPage{
+    public LunchPage() {
+        super();
+    }
+
     @FindBy(xpath = "//div[@class='product__header']")
     private List<WebElement> productLunchNames;
 

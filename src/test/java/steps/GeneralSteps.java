@@ -18,6 +18,7 @@ import static browser.Driver.getDriver;
 
 public class GeneralSteps {
 
+    Reflection reflection = new Reflection();
 
     public static String getUrl() {
         return getDriver().getCurrentUrl();

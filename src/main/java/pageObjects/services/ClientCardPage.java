@@ -9,6 +9,9 @@ import pageObjects.AbstractPage;
 @Getter
 @Setter
 public class ClientCardPage extends AbstractPage {
+    public ClientCardPage() {
+        super();
+    }
 
     @FindBy(xpath = "//div[@class='img-header__title']")
     private WebElement image_textHolder;
@@ -17,9 +20,6 @@ public class ClientCardPage extends AbstractPage {
     @FindBy(xpath = "//h4[contains(text(),'Attention!')]")
     private WebElement remarkForCustomer;
 
-    public ClientCardPage() {
-        super();
-    }
 
     @Override
     public String getUrl() {

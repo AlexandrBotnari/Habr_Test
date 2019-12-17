@@ -28,7 +28,7 @@ public class RandomProductSelect_Steps {
     }
 
 
-    @And("^\"Menu\" appears$")
+    @And("^Menu appears$")
     public void MenuAppears(){
 
     }

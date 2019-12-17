@@ -1,18 +1,12 @@
 package pageObjects;
 
-import browser.Driver;
-import org.junit.Assert;
-import org.openqa.selenium.By;
+import org.checkerframework.checker.units.qual.Current;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import pageObjects.AbstractPage;
 import lombok.Getter;
 import lombok.Setter;
-import org.openqa.selenium.WebElement;
-import utlis.RandomListSelect;
 
 import java.util.List;
-
 
 @Getter
 @Setter
@@ -23,27 +17,14 @@ public class MenuPage extends AbstractPage {
     }
 
     @FindBy(xpath = "//div[@class='modal-menu modal-menu_open']//a[*]")
-    private  List<WebElement> menuList;
 
-
+    private List<WebElement> menuList;
+    @FindBy(xpath = "//a[contains(@href,'26')]")
+    private WebElement specials;
     @FindBy(xpath = "//div[@class='product__buy add_to_cart']")
-    private  List<WebElement> productList;
-
+    private List<WebElement> productList;
     @FindBy(xpath = "//div[@class='product__alert_msg']")
-    private  WebElement productAlertMessage;
-
-
-    public  List<WebElement> getMenuList() {
-        return menuList;
-    }
-
-    public  List<WebElement> getProductList() {
-        return productList;
-    }
-
-
-    private WebElement lunchButton1;
-
+    private WebElement productAlertMessage;
 
     @Override
     public String getUrl() {

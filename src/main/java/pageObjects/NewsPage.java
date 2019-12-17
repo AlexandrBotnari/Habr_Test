@@ -1,9 +1,12 @@
 package pageObjects;
 
+import lombok.Getter;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
+@Getter
 public class NewsPage extends AbstractPage{
+    public NewsPage() { super();
+    }
 
     @FindBy(xpath = "(//div[@class='prevslist']//a[@class='button button_serv-next'])")
     private WebElement seeMore;

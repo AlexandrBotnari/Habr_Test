@@ -8,11 +8,10 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
-import pageObjects.HeaderMenu;
 
 public class LunchMenuAndys_Steps {
 
-  
+
 
     @When("^customer tries to add lunch from current day$")
     public void customerTriesToAddLunchFromCurrentDay() {
@@ -20,7 +19,7 @@ public class LunchMenuAndys_Steps {
 
     @And("^at the available time$")
     public void atTheAvailableTime() {
-        
+
     }
 
     @Then("^the chosen lunch pack stores in the cart$")

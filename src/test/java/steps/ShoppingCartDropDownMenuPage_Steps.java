@@ -6,23 +6,22 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.interactions.Actions;
-import pageObjects.HeaderMenu;
+import pageObjects.HeaderMenuPage;
 import pageObjects.ShoppingCartDropDownMenuPage;
+
+
 
 import static browser.Driver.getDriver;
 
 public class ShoppingCartDropDownMenuPage_Steps {
-
-    protected int price;
-    ShoppingCartDropDownMenuPage sCDDMP = new ShoppingCartDropDownMenuPage();
-    HeaderMenu headerMenu = new HeaderMenu();
+protected int price;
+ShoppingCartDropDownMenuPage sCDDMP =  new ShoppingCartDropDownMenuPage();
+HeaderMenuPage headerMenu = new HeaderMenuPage();
     Actions actions = new Actions(getDriver());
 
-    @Given("^any product are added in basket$")
+    @Given("^any product\\(s\\) are added in basket$")
     public void anyProductSAreAddedInBasket() {
-
-
-     //   Assert.assertEquals("Your cart is empty", sCDDMP.getShoppingCartDDHeader().getText());
+        Assert.assertNotEquals("Your cart is empty",sCDDMP.getShoppingCartDDHeader().getText());
     }
 
     @When("^user navigate on basket icon$")
@@ -30,6 +29,7 @@ public class ShoppingCartDropDownMenuPage_Steps {
 
         actions.moveToElement(headerMenu.getShoppingCart());
     }
+
 
     @Then("^dropdown menu appears$")
     public void dropdownMenuAppears() {
@@ -62,4 +62,3 @@ public class ShoppingCartDropDownMenuPage_Steps {
         throw new PendingException();
     }
 }
-
