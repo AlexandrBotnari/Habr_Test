@@ -45,4 +45,9 @@ public class MenuPage extends AbstractPage {
     private WebElement lunchButton1;
 
 
+    @Override
+    public String getUrl() {
+        url = "sefse";
+        return url;
+    }
 }

@@ -1,14 +1,19 @@
 package steps;
 
 
+import Context.Keys;
+import Context.ScenarioContext;
 import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import pageObjects.AbstractPage;
 import pageObjects.HeaderMenu;
+import utlis.reflectionHelper.Reflection;
 
 import static browser.Driver.getDriver;
 
@@ -27,14 +32,13 @@ public class MainPage_Steps {
 
 
     //Move to generic
-    @When("^user navigate on \"([^\"]*)\"$")
-    public void userNavigateOn(String element) {
-        Actions actions = new Actions(getDriver());
-        actions.moveToElement(headerMenu.getCityCurrent()).perform();
-    }
+
+//        Actions actions = new Actions(getDriver());
+//        actions.moveToElement(headerMenu.getCityCurrent()).perform();
 
 
-    @Then("^current \"([^\"]*)\" field changes to chosen$")
+
+    @Then("^current \"(.*)\" field changes to chosen$")
     public void currentLocationFieldChangesToChosen(String location) {
         Assert.assertEquals(location,headerMenu.getCityCurrent().getText());
     }
@@ -44,8 +48,7 @@ public class MainPage_Steps {
 
         Assert.assertTrue(headerMenu.getBaltiCity().isEnabled());
         Assert.assertTrue(headerMenu.getChisinauCity().isEnabled());
-        Assert.assertTrue(headerMenu.getChisinauCity().isDisplayed());
-        Assert.assertTrue(headerMenu.getBaltiCity().isDisplayed());
+
     }
 
 //    @When("^user click on  ([^\"]*)$")

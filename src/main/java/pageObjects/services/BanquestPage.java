@@ -34,7 +34,7 @@ public class BanquestPage extends AbstractPage {
     private List<WebElement> tellNumbers;
 
     @Override
-    public String url() {
+    public String getUrl() {
         url = "/events";
         return null;
     }

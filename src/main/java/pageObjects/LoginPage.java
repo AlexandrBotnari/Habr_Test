@@ -8,9 +8,9 @@ public class LoginPage extends AbstractPage{
     }
 
     @Override
-    public String url() {
+    public String getUrl() {
         url="/login";
-        return url();
+        return url;
     }
 
     /////Login form ////////

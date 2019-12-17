@@ -17,10 +17,10 @@ public class DriverFactory {
     public static WebDriver instantiateDriver(DriverType driverName) {
         switch (driverName) {
             case CHROME:
-                System.setProperty(CHROMEDRIVER_EXE,getProperty(CHROME_PATH));
+                System.setProperty(CHROMEDRIVER_EXE, getProperty(CHROME_PATH));
                 return new ChromeDriver();
             case IE:
-                System.setProperty(IE_EXE,getProperty(IE_PATH));
+                System.setProperty(IE_EXE, getProperty(IE_PATH));
 
                 InternetExplorerOptions options = new InternetExplorerOptions();
 

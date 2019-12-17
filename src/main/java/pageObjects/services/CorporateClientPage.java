@@ -19,7 +19,7 @@ public class CorporateClientPage extends AbstractPage {
     private WebElement textHeader;
 
     @Override
-    public String url() {
+    public String getUrl() {
         url = "/andys_live";
         return null;
     }

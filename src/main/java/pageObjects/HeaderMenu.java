@@ -19,7 +19,7 @@ public class HeaderMenu extends AbstractPage {
     private WebElement languagesRo;
     @FindBy(xpath = "//a[@class='prodimgp']/div[contains(text(),'Lunch')]")
     private WebElement lunchButton1;
-    @FindBy(xpath = "//div[@class='selphonenum__curr']")
+    @FindBy(xpath = "//div[@class='selphonenum']")
     private WebElement cityCurrent;
     @FindBy(xpath = "//div/ul/li/span[contains(text(),'B')]")
     private WebElement baltiCity;
@@ -43,7 +43,7 @@ public class HeaderMenu extends AbstractPage {
     }
 
     @Override
-    public String url() {
+    public String getUrl() {
         //assert na polnuiu shojesti
         url = "https://www.andys.md/en";
         return url;

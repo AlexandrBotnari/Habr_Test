@@ -27,9 +27,5 @@ public class LunchMenuAndys_Steps {
     public void theChosenLunchPackStoresInTheCart() {
     }
 
-    @Then("^\"([^\"]*)\" is opened$")
-    public void isOpened(String arg0) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
-    }
+
 }

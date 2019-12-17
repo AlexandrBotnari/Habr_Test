@@ -19,9 +19,9 @@ public class Hooks {
     }
 
 
-    @After
-    public void after() throws Exception {
-        Driver.getDriver().quit();
-    }
+//    @After
+//    public void after() throws Exception {
+//        Driver.getDriver().quit();
+//    }
 
 }

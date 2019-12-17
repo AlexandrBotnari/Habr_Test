@@ -11,7 +11,7 @@ public class NewsPage extends AbstractPage{
      private WebElement backToNews;
 
     @Override
-    public String url() {
+    public String getUrl() {
         url = "/news";
         return url;
     }

@@ -5,8 +5,8 @@ public class SpecialsPage extends AbstractPage{
     }
 
     @Override
-    public String url() {
+    public String getUrl() {
         url = "/catalog/26";
-        return url();
+        return url;
     }
 }

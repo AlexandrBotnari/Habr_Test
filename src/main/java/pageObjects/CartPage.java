@@ -17,7 +17,7 @@ import static browser.Driver.getDriver;
 @Getter
 @Setter
 
-public class CartPage {
+public class CartPage extends AbstractPage{
 
     public CartPage() {
         super();
@@ -28,5 +28,10 @@ public class CartPage {
 
     public List<WebElement> getRemoveFromCart() {
         return removeFromCart;
+    }
+
+    @Override
+    public String getUrl() {
+        return "/cartPage";
     }
 }

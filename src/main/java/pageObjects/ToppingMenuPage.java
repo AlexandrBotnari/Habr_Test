@@ -17,4 +17,9 @@ public class ToppingMenuPage extends AbstractPage{
 
     @FindBy(xpath = "//button[@class='button button_add add_to_cart']")
     private WebElement  order;
+
+    @Override
+    public String getUrl() {
+        return null;
+    }
 }

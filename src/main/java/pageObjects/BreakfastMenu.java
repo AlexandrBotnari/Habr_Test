@@ -6,8 +6,8 @@ public class BreakfastMenu extends AbstractPage {
 
 
     @Override
-    public String url() {
+    public String getUrl() {
         url = "/26/53";
-        return url();
+        return url;
     }
 }
