@@ -8,7 +8,10 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 @Getter
 @Setter
-public class ShoppingCartDropDownMenuPage {
+public class ShoppingCartDropDownMenuPage  extends AbstractPage{
+    public ShoppingCartDropDownMenuPage() {
+        super();
+    }
     @FindBy(xpath = "//div[@class='bag__header']")
     private WebElement shoppingCartDDHeader;
 
@@ -22,7 +25,7 @@ public class ShoppingCartDropDownMenuPage {
     private WebElement shoppingCartDDProductsMinus;
 
     @FindBy(xpath = "//a[@class='selcount__action selcount__plus'")
-    private List<WebElement> shoppingCartDDProductsPlus;
+    private WebElement shoppingCartDDProductsPlus;
 
     @FindBy(xpath = "//a[@class= 'button button_end' ]")
     private WebElement orderButton;
@@ -32,4 +35,9 @@ public class ShoppingCartDropDownMenuPage {
 
     @FindBy(xpath = "//span[@class='cart_delivery']")
     private WebElement deliveryPrice;
+
+    @Override
+    public String getUrl() {
+        return null;
+    }
 }

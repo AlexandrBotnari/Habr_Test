@@ -21,7 +21,7 @@ public class Friend2FriendPage extends AbstractPage {
     private WebElement lastPoint;
 
     @Override
-    public String url() {
+    public String getUrl() {
         url = "/regulations_of_the_loyalty_program_friends_2_friends";
         return null;
     }

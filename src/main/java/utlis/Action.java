@@ -27,4 +27,9 @@ public class Action extends AbstractPage {
     public void RemoveRandomFromCart(){
         RandomListSelect.GetRandomFromList(cartPage.getRemoveFromCart()).click();
     }
+
+    @Override
+    public String getUrl() {
+        return null;
+    }
 }
