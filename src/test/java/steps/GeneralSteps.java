@@ -39,10 +39,11 @@ public class GeneralSteps {
         actions.moveToElement(webElement).perform();
     }
 
+
     @When("^user clicks on \"(.*)\" button$")
     public void userClicksOnButton(String button) throws Throwable {
         WebElement webElement = Reflection.getElement((AbstractPage) ScenarioContext.get(Keys.CURRENT_PAGE), button);
         webElement.click();
-        throw new PendingException();
+
     }
 }
