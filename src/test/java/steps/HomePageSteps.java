@@ -4,14 +4,14 @@ package steps;
 import cucumber.api.java.en.Then;
 import lombok.Getter;
 import org.junit.Assert;
-import pageObjects.HeaderMenu;
+import pages.HomePage;
 
 import static browser.Driver.getDriver;
 
 @Getter
 public class HomePageSteps {
 
-    HeaderMenu headerMenu = new HeaderMenu();
+    HomePage homePage = new HomePage();
 
     @Then("^current \"(.*)\" field changes to chosen$")
     public void currentLocationFieldChangesToChosen(String location) throws InterruptedException {
@@ -19,16 +19,16 @@ public class HomePageSteps {
 
         if (location.equals("chisinau")) {
             location = "210-210";
-            Assert.assertTrue(headerMenu.getCityCurrent().getText().toLowerCase().endsWith(location));
+            Assert.assertTrue(homePage.getCityCurrent().getText().toLowerCase().endsWith(location));
         } else
 
-            Assert.assertTrue(headerMenu.getCityCurrent().getText().toLowerCase().startsWith(location));
+            Assert.assertTrue(homePage.getCityCurrent().getText().toLowerCase().startsWith(location));
     }
 
     @Then("^drop down menu appears$")
     public void dropDownMenuAppears() {
-        Assert.assertTrue(headerMenu.getBalti().isEnabled());
-        Assert.assertTrue(headerMenu.getChisinau().isEnabled());
+        Assert.assertTrue(homePage.getBalti().isEnabled());
+        Assert.assertTrue(homePage.getChisinau().isEnabled());
     }
 
 

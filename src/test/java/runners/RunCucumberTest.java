@@ -11,14 +11,12 @@ import org.junit.runner.RunWith;
 
 
         features = "classpath:features",
-        plugin = {"pretty", "html:target/cucumber-html-report", "json:target/cucumber/cucumber.json"},
+        plugin = {"pretty", "html:target/cucumber-html-report", "json:target/cucumber.json}"},
         glue = {"classpath:steps", "classpath:hooks"},
-        tags = "@aa",
+        tags = "@olea",
 
         snippets = SnippetType.CAMELCASE
 )
 
 public class RunCucumberTest {
-    //  If you are not Alex, go f... out of here
-    //  Keep your tiny dirty hands out of this code
 }

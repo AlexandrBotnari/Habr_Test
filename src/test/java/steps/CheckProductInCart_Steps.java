@@ -2,7 +2,7 @@ package steps;
 
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
-import pageObjects.HomePage;
+import pages.HomePage;
 import utlis.Action;
 
 public class CheckProductInCart_Steps {

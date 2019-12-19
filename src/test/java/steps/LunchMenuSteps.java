@@ -4,8 +4,8 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import org.joda.time.LocalTime;
 import org.junit.Assert;
-import pageObjects.AbstractPage;
-import pageObjects.LunchPage;
+import pages.AbstractPage;
+import pages.LunchPage;
 
 public class LunchMenuSteps extends AbstractPage {
     LunchPage lunchPage = new LunchPage();

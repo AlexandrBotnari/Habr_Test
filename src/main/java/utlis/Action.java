@@ -1,10 +1,7 @@
 package utlis;
 
 import lombok.Getter;
-import pageObjects.CareerPage;
-import pageObjects.CartPage;
-import pageObjects.HomePage;
-import pageObjects.MenuPage;
+import pages.*;
 
 @Getter
 public class Action {
@@ -13,11 +10,16 @@ public class Action {
     CartPage cartPage = new CartPage();
     MenuPage menuPage = new MenuPage();
     CareerPage careerPage = new CareerPage();
+    RestaurantsPage restaurantsPage = new RestaurantsPage();
 
 
     public void GetRandomCategory() {
         Logs.logger.info("Gets Random Category");
         RandomListSelect.GetRandomFromList(menuPage.getMenuList()).click();
+    }
+
+    public void GetRandomFilter() {
+        RandomListSelect.GetRandomFromList(restaurantsPage.getFilter()).click();
     }
 
     public void GetRandomProduct() {
