@@ -1,10 +1,11 @@
-Feature:
-Background:
-  Given "Home" page is opened
+Feature: Login
 
+  Background:
+    Given "HomePage" is opened
+#  @olea
   Scenario: Verify Log In with correct credentials
-    When User clicks on My Account dropdown
-    And User clicks on "Login" button
-    Then "Login" page is opened
-    When User enters "" and ""
-    And User clicks on "Login" button
+    When user clicks on "login" button
+    Then "LoginPage" is opened
+    When user enters "dochki_12@mail.ru" and "andysframe21"
+    And user clicks on "login" button
+    Then "AccountPage" is opened

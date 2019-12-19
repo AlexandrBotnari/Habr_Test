@@ -2,11 +2,13 @@ package steps;
 
 
 import cucumber.api.java.en.Then;
+import lombok.Getter;
 import org.junit.Assert;
 import pageObjects.HeaderMenu;
 
 import static browser.Driver.getDriver;
 
+@Getter
 public class HomePageSteps {
 
     HeaderMenu headerMenu = new HeaderMenu();
@@ -25,8 +27,8 @@ public class HomePageSteps {
 
     @Then("^drop down menu appears$")
     public void dropDownMenuAppears() {
-        Assert.assertTrue(headerMenu.getBaltiCity().isEnabled());
-        Assert.assertTrue(headerMenu.getChisinauCity().isEnabled());
+        Assert.assertTrue(headerMenu.getBalti().isEnabled());
+        Assert.assertTrue(headerMenu.getChisinau().isEnabled());
     }
 
 

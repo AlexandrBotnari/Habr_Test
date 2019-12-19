@@ -5,6 +5,7 @@ import java.util.Properties;
 
 public class PropertyReader {
 
+
     private static Properties properties;
 
     public PropertyReader() {
@@ -12,6 +13,7 @@ public class PropertyReader {
             properties = new Properties();
             try {
                 properties.load(Driver.class.getClassLoader().getResourceAsStream("application.properties"));
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
