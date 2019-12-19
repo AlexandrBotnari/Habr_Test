@@ -1,4 +1,4 @@
-package pageObjects.services;
+package pageObjects;
 
 import pageObjects.AbstractPage;
 import org.openqa.selenium.WebElement;
@@ -12,7 +12,10 @@ public class PrivateEventsPage extends AbstractPage {
 
     @FindBy(xpath = "//div[@class='img-header__title']")
     private WebElement image_textHolder;
-
+    @FindBy(xpath ="//li[contains(@class,'dropmenu__item dropmenu__item_isdrop ')]/a[contains(text(),'Services')]" )
+    private WebElement services;
+    @FindBy(xpath = "//li[@class='dropmenu__item dropmenu__item_isdrop active']//li[1]")
+    private WebElement walft;
     @FindBy(xpath = "//h1[contains(text(),'Отметь свой праздник вместе с друзьями в Andy’s Pizza!')]")
     private WebElement headerOnPageRU;
     @FindBy(xpath = "//h1[contains(text(),'We like to be chosen by big companies')]")
@@ -22,7 +25,7 @@ public class PrivateEventsPage extends AbstractPage {
 
     @Override
     public String getUrl() {
-        url = "/private_events";
-        return null;
+        url = "https://www.andys.md/en/private_events";
+        return url;
     }
 }

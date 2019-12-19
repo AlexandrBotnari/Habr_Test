@@ -1,4 +1,4 @@
-package pageObjects.services;
+package pageObjects;
 
 import pageObjects.AbstractPage;
 import lombok.Getter;
@@ -17,7 +17,8 @@ public class CorporateClientPage extends AbstractPage {
     private WebElement image_textHolder;
     @FindBy(xpath = "//h1//u[contains(text(),'Company')]")
     private WebElement textHeader;
-
+    @FindBy(xpath ="//li[contains(@class,'dropmenu__item dropmenu__item_isdrop ')]/a[contains(text(),'Services')]" )
+    private WebElement services;
     @Override
     public String getUrl() {
         url = "/andys_live";

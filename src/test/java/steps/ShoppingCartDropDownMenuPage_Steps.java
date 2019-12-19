@@ -1,65 +1,63 @@
 package steps;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.interactions.Actions;
+import pageObjects.CartPage;
 import pageObjects.HeaderMenu;
+import pageObjects.HomePage;
 import pageObjects.ShoppingCartDropDownMenuPage;
 
 import static browser.Driver.getDriver;
 
 public class ShoppingCartDropDownMenuPage_Steps {
 
-    protected int price;
+    protected int quantity;
     ShoppingCartDropDownMenuPage sCDDMP = new ShoppingCartDropDownMenuPage();
     HeaderMenu headerMenu = new HeaderMenu();
+    HomePage homePage = new HomePage();
     Actions actions = new Actions(getDriver());
+    CartPage cartPage = new CartPage();
 
     @Given("^any product are added in basket$")
-    public void anyProductSAreAddedInBasket() {
+    public void anyProductSAreAddedInBasket() throws InterruptedException {
+
+        homePage.getMenuButton().click();
+        Thread.sleep(2000);
+        homePage.getSpecials().click();
+        homePage.getSnackToVodka().click();
+        homePage.getBack().click();
 
 
-     //   Assert.assertEquals("Your cart is empty", sCDDMP.getShoppingCartDDHeader().getText());
     }
 
-    @When("^user navigate on basket icon$")
-    public void userNavigateOnBasketIcon() {
 
-        actions.moveToElement(headerMenu.getShoppingCart());
-    }
-
-    @Then("^dropdown menu appears$")
-    public void dropdownMenuAppears() {
+    @Then("^dropdown cart menu appears$")
+    public void dropdownMenuCartAppears() throws InterruptedException {
+        Thread.sleep(1000);
         Assert.assertTrue(sCDDMP.getOrderButton().isDisplayed());
-    }
-
-    @When("^user clicks on \"minus\" button$")
-    public void userClicksOnButtonmin() throws Throwable {
-        price = Integer.parseInt(sCDDMP.getTotalPrice().getText());
-        sCDDMP.getShoppingCartDDProductsMinus().click();
-        throw new PendingException();
-    }
-
-    @Then("^quantity of this product changes to one \"less\"$")
-    public void quantityOfThisProductChangesToOne(String arg0) throws Throwable {
-        Assert.assertEquals(price, Integer.parseInt(sCDDMP.getTotalPrice().getText()) - 1);
-        throw new PendingException();
+        quantity = Integer.parseInt(sCDDMP.getQuantitty().getText());
     }
 
 
-    @When("^user clicks on \"plus\" button$")
-    public void userClicksOnButtonplu() throws Throwable {
-        price = Integer.parseInt(sCDDMP.getTotalPrice().getText());
-        sCDDMP.getShoppingCartDDProductsPlus().click();
-        throw new PendingException();
+    @Then("^quantity of this product changes to one less$")
+    public void quantityOfThisProductChangesToOneLess() throws Throwable {
+        Thread.sleep(1000);
+        int currentQuantity = Integer.parseInt(cartPage.getQuantitty().getAttribute("innerHTML"));
+        quantity = quantity - 1;
+        Assert.assertEquals(quantity, currentQuantity);
+
+
     }
-    @Then("^quantity of this product changes to one \"more\"$")
-    public void quantityOfThisProductChangesToOne() throws Throwable {
-        Assert.assertEquals(price, Integer.parseInt(sCDDMP.getTotalPrice().getText()) + 1);
-        throw new PendingException();
+
+
+    @Then("^quantity of this product changes to one more$")
+    public void quantityOfThisProductChangesToOneMore() throws Throwable {
+        int currentQuantity = Integer.parseInt(cartPage.getQuantitty().getAttribute("innerHTML"));
+        quantity = quantity + 1;
+        Assert.assertEquals(quantity, currentQuantity);
+
     }
 }
 

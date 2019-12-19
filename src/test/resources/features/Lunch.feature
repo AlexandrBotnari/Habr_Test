@@ -1,14 +1,17 @@
 Feature: Order lunch from Andy's pizza
 
   Background:
-    Given "Home" page is opened
+    Given "HomePage" is opened
 
-    @Success
-  Scenario:Add lunch to shopping cart(basket) at present day
-
-    When customer tries to add lunch from current day
-    And at the available time
-    Then the chosen lunch pack stores in the cart
+  @LunchABPosistive
+  Scenario:User opens lunch page
+    When user navigate on "menuButton"
+    And user clicks on "menuButton" button
+    Then drop down menu appears
+    When user clicks on "specials" button
+    Then "SpecialsPage" is opened
+    When user clicks on "lunchButton" button
+    Then "LunchPage" is opened
 
 
 

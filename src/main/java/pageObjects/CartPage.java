@@ -25,6 +25,8 @@ public class CartPage extends AbstractPage{
 
     @FindBy(xpath = "//div[@class='prodlist']//a[@class='link']")
     private  List<WebElement> removeFromCart;
+    @FindBy(xpath = "//div[@class='selcount__current product_quan']")
+    private WebElement quantitty;
 
     public List<WebElement> getRemoveFromCart() {
         return removeFromCart;
@@ -32,6 +34,6 @@ public class CartPage extends AbstractPage{
 
     @Override
     public String getUrl() {
-        return "/cartPage";
+        return "https://www.andys.md/en/cart";
     }
 }

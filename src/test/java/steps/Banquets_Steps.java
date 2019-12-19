@@ -1,11 +1,14 @@
 package steps;
 
 
+import pageObjects.AbstractPage;
 
-public class Banquets_Steps  {
+public class Banquets_Steps {
 
 
-}
+
+    }
+
 
 
 

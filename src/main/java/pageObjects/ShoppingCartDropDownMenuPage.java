@@ -35,7 +35,8 @@ public class ShoppingCartDropDownMenuPage  extends AbstractPage{
 
     @FindBy(xpath = "//span[@class='cart_delivery']")
     private WebElement deliveryPrice;
-
+@FindBy(xpath = "//div[@class='selcount__current product_quan']")
+private WebElement quantitty;
     @Override
     public String getUrl() {
         return null;

@@ -44,7 +44,7 @@ public class HeaderMenu extends AbstractPage {
 
     @Override
     public String getUrl() {
-        //assert na polnuiu shojesti
+
         url = "https://www.andys.md/en";
         return url;
 
