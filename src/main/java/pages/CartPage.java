@@ -1,18 +1,11 @@
-package pageObjects;
+package pages;
 
-import org.openqa.selenium.support.FindBy;
-
-import org.junit.Assert;
-import org.openqa.selenium.By;
-import pageObjects.AbstractPage;
 import lombok.Getter;
 import lombok.Setter;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
-
-import static browser.Driver.getDriver;
 
 @Getter
 @Setter

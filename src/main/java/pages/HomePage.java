@@ -1,14 +1,13 @@
-package pageObjects;
+package pages;
 
 import lombok.Getter;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
 @Getter
 public class HomePage extends AbstractPage {
 
     @FindBy(xpath = "//button[@class='button button_serv js-delivery-menu']")
-    private WebElement menuButton;
+    private WebElement menu;
     @FindBy(xpath = "//div[@class='bag__count cart_count']")
     private WebElement cartCounter;
 
@@ -16,8 +15,6 @@ public class HomePage extends AbstractPage {
     private WebElement minus;
     @FindBy(xpath = "//a[@class='selcount__action selcount__plus']")
     private WebElement plus;
-
-
     @FindBy(xpath = "//a[@class='prodimgp']/div[contains(text(),'Lunch')]")
     private WebElement lunchButton;
     @FindBy(xpath = "//div[@id='product_1838']//div[@class='product__buy add_to_cart']")
@@ -26,7 +23,8 @@ public class HomePage extends AbstractPage {
     private WebElement back;
     @FindBy(xpath = "//div[@class='modal-menu modal-menu_open']//a[1]//img[1]" )
     private WebElement specials;
-
+    @FindBy(xpath = "//div[@class='modal-menu modal-menu_open']//a[2]")
+    private WebElement pizza;
 
     public HomePage() {
         super();

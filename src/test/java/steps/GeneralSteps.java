@@ -7,15 +7,19 @@ import cucumber.api.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import pageObjects.AbstractPage;
+import pages.AbstractPage;
 import utlis.reflectionHelper.Reflection;
+import utlis.screenshots.Screenshots;
 
 import java.lang.reflect.InvocationTargetException;
 
 import static browser.Driver.getDriver;
+import static utlis.screenshots.Screenshots.screenshot;
+
 
 public class GeneralSteps {
 
+    Reflection reflection = new Reflection();
 
     public static String getUrl() {
         return getDriver().getCurrentUrl();
@@ -28,6 +32,7 @@ public class GeneralSteps {
         AbstractPage page = Reflection.getPage(pageName);
         Assert.assertEquals(getUrl(),page.getUrl());
         ScenarioContext.set(Keys.CURRENT_PAGE, page);
+        screenshot(pageName);
 
     }
 
@@ -37,10 +42,11 @@ public class GeneralSteps {
         actions.moveToElement(webElement).perform();
     }
 
-
     @When("^user clicks on \"(.*)\" button$")
     public void userClicksOnButton(String button) throws Throwable {
         WebElement webElement = Reflection.getElement((AbstractPage) ScenarioContext.get(Keys.CURRENT_PAGE), button);
+        Screenshots.highLighterMethod(webElement);
+        screenshot(button);
         webElement.click();
 
     }

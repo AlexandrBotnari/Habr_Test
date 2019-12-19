@@ -3,9 +3,9 @@ package steps;
 import cucumber.api.java.en.Then;
 import lombok.Getter;
 import org.junit.Assert;
-import pageObjects.ContactsPage;
-import pageObjects.DeliveryPage;
-import pageObjects.FeedbackPage;
+import pages.ContactsPage;
+import pages.DeliveryPage;
+import pages.FeedbackPage;
 import utlis.Logs;
 
 @Getter

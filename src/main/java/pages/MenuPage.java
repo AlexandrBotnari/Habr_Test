@@ -1,11 +1,10 @@
-package pageObjects;
+package pages;
 
 import lombok.Getter;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
-
 
 @Getter
 public class MenuPage extends AbstractPage {
@@ -25,7 +24,6 @@ public class MenuPage extends AbstractPage {
     @FindBy(xpath = "//div[@class='product__alert_msg']")
     private WebElement productAlertMessage;
 
-    private WebElement lunchButton1;
 
 
     @Override

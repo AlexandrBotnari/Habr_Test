@@ -1,6 +1,5 @@
-package pageObjects;
+package pages;
 
-import pageObjects.AbstractPage;
 import lombok.Getter;
 import lombok.Setter;
 import org.openqa.selenium.WebElement;

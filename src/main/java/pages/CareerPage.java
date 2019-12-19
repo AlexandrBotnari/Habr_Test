@@ -1,4 +1,4 @@
-package pageObjects;
+package pages;
 
 import annotaion.PageName;
 import lombok.Getter;
