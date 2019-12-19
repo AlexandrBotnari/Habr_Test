@@ -1,6 +1,6 @@
 Feature:
 
-
+@aa
   Scenario: Check if product preview functionality is operating
     Given "HomePage" is opened
     When user clicks on "menuButton" button

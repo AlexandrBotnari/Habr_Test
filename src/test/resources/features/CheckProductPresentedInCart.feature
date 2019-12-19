@@ -1,6 +1,6 @@
 Feature: Andy's Test
 
-
+@aa
   Scenario: Check product is presented on cart page and removal possibility
     Given "HomePage" is opened
     When user clicks on "menuButton" button

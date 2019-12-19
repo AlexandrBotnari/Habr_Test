@@ -3,12 +3,14 @@ package steps;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import hooks.Hooks;
+import org.apache.log4j.Logger;
 import pageObjects.HomePage;
 import utlis.Action;
 
 public class ProductPreview_Steps {
 
-    HomePage homePage = new HomePage();
+
     Action action = new Action();
 
 

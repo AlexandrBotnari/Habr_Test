@@ -12,16 +12,19 @@ import java.util.List;
 public class CareerPage extends AbstractPage {
 
 
-    @FindBy(xpath = "//input[@class='input-text input-text_form']")
+    @FindBy(xpath = "//input[@class=\"input-text input-text_form\"]")
     private List<WebElement> informationFillList;
 
-    @FindBy(xpath = "//h3[@class='tab_drawer_heading tab_drawer_active']")
+    @FindBy(xpath = "//div[@class='infoctgs']")
+    private WebElement informationListBlock;
+
+    @FindBy(xpath = "//div[contains(text(),'Restaurant Jobs:')]")
     private WebElement restaurantTabButton;
 
     @FindBy(xpath = "//div[@id='tab_content_1']//label[@class='input-checkbox']//div[1]")
     private List<WebElement> restaurantJobsList;
 
-    @FindBy(xpath = "//h3[contains(text(),'Factory Jobs:')]")
+    @FindBy(xpath = "//div[contains(text(),'Factory Jobs:')]")
     private WebElement factoryTabButton;
 
     @FindBy(xpath = "//div[@id='tab_content_2']//label[@class='input-checkbox']//div[1]")
@@ -36,7 +39,7 @@ public class CareerPage extends AbstractPage {
 
     @Override
     public String getUrl() {
-        url = "https://andys.md/en/cariera";
+        url = "https://www.andys.md/en/cariera";
         return url;
     }
 }

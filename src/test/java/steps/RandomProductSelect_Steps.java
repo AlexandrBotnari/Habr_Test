@@ -2,19 +2,22 @@ package steps;
 
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
+import hooks.Hooks;
+import org.junit.Assert;
 import pageObjects.HomePage;
 import utlis.Action;
+import utlis.Logs;
 
 
 public class RandomProductSelect_Steps {
 
-
-    HomePage homePage = new HomePage();
     Action action = new Action();
 
 
     @And("^\"Menu\" appears$")
     public void MenuAppears() {
+      //  Assert.assertTrue(feedbackPage.getFeedbackAssertCheck().isDisplayed());
+        Logs.logger.info("Assert verification ");
 
     }
 
@@ -29,10 +32,9 @@ public class RandomProductSelect_Steps {
     }
 
     @Then("^User adds random product from category to cart$")
-    public void SelectRandomProduct() throws InterruptedException {
+    public void SelectRandomProduct() {
         action.GetRandomProduct();
-        Thread.sleep(2000);
-        //    HomePage.CartCounterAssertCheck();
+
 
     }
 }

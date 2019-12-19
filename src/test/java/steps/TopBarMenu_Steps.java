@@ -10,6 +10,7 @@ import pageObjects.ContactsPage;
 import pageObjects.DeliveryPage;
 import pageObjects.FeedbackPage;
 import pageObjects.HomePage;
+import utlis.Logs;
 
 @Getter
 public class TopBarMenu_Steps {
@@ -21,20 +22,20 @@ public class TopBarMenu_Steps {
     @Then("^Feedback Page is displayed$")
     public void FeedbackPageIsDisplayed() {
         Assert.assertTrue(feedbackPage.getFeedbackAssertCheck().isDisplayed());
-        Hooks.logger.info("Assert verification ");
+        Logs.logger.info("Assert verification ");
     }
 
     @Then("^Contacts page is displayed$")
     public void ContactsPageDisplayed() {
         Assert.assertTrue(contactsPage.getContactsHeader().isDisplayed());
-        Hooks.logger.info("Assert verification ");
+        Logs.logger.info("Assert verification ");
 
     }
 
     @Then("^Delivery page is displayed$")
     public void DeliveryDisplayed() {
         Assert.assertTrue(deliveryPage.getDeliveryHeader().isDisplayed());
-        Hooks.logger.info("Assert verification ");
+        Logs.logger.info("Assert verification ");
 
     }
 }

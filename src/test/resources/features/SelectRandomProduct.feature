@@ -1,6 +1,6 @@
 Feature: Andy's Test
 
-
+@aa
   Scenario: Select random product from product list
     Given "HomePage" is opened
     When user clicks on "menuButton" button

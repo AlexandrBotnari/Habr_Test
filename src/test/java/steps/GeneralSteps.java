@@ -2,8 +2,6 @@ package steps;
 
 import Context.Keys;
 import Context.ScenarioContext;
-import cucumber.api.PendingException;
-import cucumber.api.java.cs.A;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
@@ -43,6 +41,7 @@ public class GeneralSteps {
     @When("^user clicks on \"(.*)\" button$")
     public void userClicksOnButton(String button) throws Throwable {
         WebElement webElement = Reflection.getElement((AbstractPage) ScenarioContext.get(Keys.CURRENT_PAGE), button);
+        actions.moveToElement(webElement).perform();
         webElement.click();
 
     }

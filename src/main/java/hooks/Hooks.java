@@ -6,11 +6,14 @@ import browser.PropertyReader;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
-import org.apache.log4j.Logger;
+import lombok.Getter;
+import utlis.Logs;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+
+@Getter
 public class Hooks {
     private PropertyReader propertyReader;
 
@@ -20,24 +23,26 @@ public class Hooks {
         System.setProperty("current.date.time", dateFormat.format(new Date()));
     }
 
-    public static Logger logger = Logger.getLogger(Hooks.class);
+
     private Scenario currentScenario;
 
     @Before
     public void startDriver(Scenario scenario) {
+
+
         currentScenario = scenario;
         propertyReader = new PropertyReader();
         Driver.createDriver(DriverType.CHROME);
         Driver.getDriver().manage().window().maximize();
-        Driver.getDriver().get("https://www.andys.md/en");
-        logger.info("Start of scenario " + currentScenario.getName());
+        Driver.getDriver().get(PropertyReader.getProperty("HomePage.url"));
+        Logs.logger.info("Start of scenario " + currentScenario.getName());
     }
 
 
     @After
     public void after() {
         Driver.getDriver().quit();
-        logger.info("End of Scenario " + currentScenario.getName());
+        Logs.logger.info("End of Scenario " + currentScenario.getName());
     }
 
 }

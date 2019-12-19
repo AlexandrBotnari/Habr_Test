@@ -1,14 +1,10 @@
 package utlis;
 
-import org.junit.Assert;
-import pageObjects.*;
-import org.apache.log4j.Logger;
 import lombok.Getter;
+import pageObjects.*;
 
 @Getter
-public class Action extends AbstractPage {
-
-    private static org.apache.log4j.Logger logger = Logger.getLogger(Action.class);
+public class Action  {
 
     HomePage homePage = new HomePage();
     CartPage cartPage = new CartPage();
@@ -17,40 +13,45 @@ public class Action extends AbstractPage {
 
 
 
-    public Action() {
-        super();
-    }
-
     public void GetRandomCategory() {
-        logger.info("Gets Random Category");
+        Logs.logger.info("Gets Random Category");
         RandomListSelect.GetRandomFromList(menuPage.getMenuList()).click();
     }
 
     public void GetRandomProduct() {
-        logger.info("Gets Random Product");
+        Logs.logger.info("Gets Random Product");
         RandomListSelect.GetRandomFromList(menuPage.getProductList()).click();
     }
 
     public void RemoveRandomFromCart() {
-        logger.info("Removes Random product from cart");
+        Logs.logger.info("Removes Random product from cart");
         RandomListSelect.GetRandomFromList(cartPage.getRemoveFromCart()).click();
-}
+    }
 
     public void GetRandomProductPhoto() {
-        logger.info("Gets Random product photo");
+        Logs.logger.info("Gets Random product photo");
         RandomListSelect.GetRandomFromList(menuPage.getProductPhotoList()).click();
     }
 
     public void EnterDataInRandomField() {
-        logger.info("Enters data in random Field");
-        RandomListSelect.GetRandomFromList(careerPage.getInformationFillList()).click();
+        Logs.logger.info("Enters data in random Field");
+        RandomListSelect.GetRandomFromList(careerPage.getInformationFillList()).sendKeys("123456");
+    }
+
+    public void RestaurantJobsListRandom() {
+        Logs.logger.info("Clicks on Random Restaurant Job checkbox");
+        RandomListSelect.GetRandomFromList(careerPage.getRestaurantJobsList()).click();
+    }
+
+    public void FactoryJobsListRandom() {
+        Logs.logger.info("Clicks on Random Factory Job checkbox");
+        RandomListSelect.GetRandomFromList(careerPage.getFactoryJobsList()).click();
+    }
+
+    public void RandomCheckBoxesList() {
+        Logs.logger.info("Clicks on Random miscellaneous checkbox");
+        RandomListSelect.GetRandomFromList(careerPage.getRandomCheckBoxesList()).click();
     }
 
 
-
-
-    @Override
-    public String getUrl() {
-        return null;
-    }
 }
