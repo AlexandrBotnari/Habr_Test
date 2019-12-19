@@ -10,6 +10,6 @@ Feature: Change city
     Then current "<location>" field changes to chosen
 
     Examples:
-      | location     |
-      | baltiCity    |
-      | chisinauCity |
+      | location |
+      | balti    |
+      | chisinau |

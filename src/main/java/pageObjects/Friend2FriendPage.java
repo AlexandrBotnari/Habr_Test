@@ -1,4 +1,4 @@
-package pageObjects.services;
+package pageObjects;
 
 import pageObjects.AbstractPage;
 import lombok.Getter;
@@ -19,6 +19,8 @@ public class Friend2FriendPage extends AbstractPage {
 
     @FindBy(xpath = "(//p/u/strong)[4]")
     private WebElement lastPoint;
+    @FindBy(xpath ="//li[contains(@class,'dropmenu__item dropmenu__item_isdrop ')]/a[contains(text(),'Services')]" )
+    private WebElement services;
 
     @Override
     public String getUrl() {

@@ -1,4 +1,4 @@
-package pageObjects.services;
+package pageObjects;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -16,7 +16,8 @@ public class ClientCardPage extends AbstractPage {
     private WebElement textHeader;
     @FindBy(xpath = "//h4[contains(text(),'Attention!')]")
     private WebElement remarkForCustomer;
-
+    @FindBy(xpath ="//li[contains(@class,'dropmenu__item dropmenu__item_isdrop ')]/a[contains(text(),'Services')]" )
+    private WebElement services;
     public ClientCardPage() {
         super();
     }
@@ -24,6 +25,6 @@ public class ClientCardPage extends AbstractPage {
     @Override
     public String getUrl() {
         url = "/clients_card";
-        return null;
+        return url;
     }
 }

@@ -1,39 +1,39 @@
 Feature: User look through services information
-
+@ServicesAB
   Scenario: User open every services page
-    Given The Andy's pizza main page is displayed
+    Given "HomePage" is opened
 
-    When user navigate on "Services"
+    When user navigate on "services"
     Then dropdown menu appears
-    When user clicks on "Services" button
-    Then "Private Events" is opened
+    When user clicks on "services" button
+    Then "PrivateEventsPage" is opened
 
-    When user navigate on "Services"
+    When user navigate on "services"
     Then dropdown menu appears
     When user clicks on "WeAreLookingForTasters" button
-    Then "We Are Looking For Tasters" is opened
+    Then "LookingforTastersPage" is opened
 
-    When user navigate on "Services"
+    When user navigate on "services"
     Then dropdown menu appears
     When user clicks on "Program_F2F" button
-    Then "Program_F2F" is opened
+    Then "Freind2FriendPage" is opened
 
-    When user navigate on "Services"
+    When user navigate on "services"
     Then dropdown menu appears
     When user clicks on "ClientCard" button
-    Then "ClientCard" is opened
+    Then "ClientCardPage" is opened
 
-    When user navigate on "Services"
+    When user navigate on "services"
     Then dropdown menu appears
     When user clicks on "CorporateClient" button
-    Then "CorporateClient" is opened
+    Then "CorporateClientPage" is opened
 
-    When user navigate on "Services"
+    When user navigate on "services"
     Then dropdown menu appears
     When user clicks on "KidsParties" button
-    Then "KidsParties" is opened
+    Then "KidsPartiesPage" is opened
 
-    When user navigate on "Services"
+    When user navigate on "services"
     Then dropdown menu appears
     When user clicks on "Banquets" button
-    Then "Banquets" is opened
+    Then "BanquetsPage" is opened
