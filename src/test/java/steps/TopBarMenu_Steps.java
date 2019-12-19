@@ -1,33 +1,37 @@
 package steps;
 
-import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+import lombok.Getter;
+import org.junit.Assert;
+import pageObjects.ContactsPage;
+import pageObjects.DeliveryPage;
+import pageObjects.FeedbackPage;
+import utlis.Logs;
 
+@Getter
 public class TopBarMenu_Steps {
 
-    @When("^user clicks on Feedback button$")
-    public void UserClicksFeedback() {
-    }
+    FeedbackPage feedbackPage = new FeedbackPage();
+    ContactsPage contactsPage = new ContactsPage();
+    DeliveryPage deliveryPage = new DeliveryPage();
 
     @Then("^Feedback Page is displayed$")
-    public void FeedbackPageIsDisplayed() throws InterruptedException {
+    public void FeedbackPageIsDisplayed() {
+        Assert.assertTrue(feedbackPage.getFeedbackAssertCheck().isDisplayed());
+        Logs.logger.info("Assert verification ");
     }
 
-    @When("^user clicks on Contacts button$")
-    public void UserClicksOnContact(){
-
-    }
     @Then("^Contacts page is displayed$")
-    public void ContactsPageDisplayed(){
+    public void ContactsPageDisplayed() {
+        Assert.assertTrue(contactsPage.getContactsHeader().isDisplayed());
+        Logs.logger.info("Assert verification ");
 
     }
-    @When("^user clicks on Delivery button$")
-    public void UserClicksOnDelivery(){
 
-    }
     @Then("^Delivery page is displayed$")
-    public void DeliveryDisplayed(){
+    public void DeliveryDisplayed() {
+        Assert.assertTrue(deliveryPage.getDeliveryHeader().isDisplayed());
+        Logs.logger.info("Assert verification ");
 
     }
 }

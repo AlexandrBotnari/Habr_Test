@@ -1,10 +1,12 @@
 Feature:
 
-
+  @aa
   Scenario: Top bar menu functionality
-    When user clicks on Feedback button
-    Then Feedback Page is displayed
-    When user clicks on Contacts button
-    Then Contacts page is displayed
-    When user clicks on Delivery button
-    Then Delivery page is displayed
+
+    Given "HomePage" is opened
+    When user clicks on "feedbackButton" button
+    Then "FeedbackPage" is opened
+    When user clicks on "contactsButton" button
+    Then "ContactsPage" is opened
+    When user clicks on "deliveryButton" button
+    Then "DeliveryPage" is opened
