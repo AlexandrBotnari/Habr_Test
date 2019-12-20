@@ -10,7 +10,8 @@ public class HomePage extends AbstractPage {
     private WebElement menu;
     @FindBy(xpath = "//div[@class='bag__count cart_count']")
     private WebElement cartCounter;
-
+@FindBy(xpath = "//div[@class='modal-menu__content']")
+private WebElement menumap;
     @FindBy(xpath = "//a[@class='selcount__action selcount__minus']")
     private WebElement minus;
     @FindBy(xpath = "//a[@class='selcount__action selcount__plus']")

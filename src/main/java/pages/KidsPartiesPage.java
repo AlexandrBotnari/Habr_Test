@@ -34,7 +34,7 @@ public class KidsPartiesPage extends AbstractPage {
 
     @Override
     public String getUrl() {
-        url = "/party";
-        return null;
+        url = "https://www.andys.md/en/party";
+        return url;
     }
 }

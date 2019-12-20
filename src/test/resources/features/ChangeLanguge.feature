@@ -1,15 +1,15 @@
 Feature: Change language
-
+  @Alex
   @ChangeLanguageAb
-  Scenario Outline: User  changes language to Russian and Romanian
+  Scenario Outline: User  changes language to <language>
     Given "HomePage" is opened
     When user clicks on "<lang>" button
     Then page changes language to "<lang>"
 
     Examples:
-      | lang |
-      | Ru   |
-      | Ro   |
+      | lang |language|
+      | Ru   |Russian |
+      | Ro   |Romanian|
 
 
 
