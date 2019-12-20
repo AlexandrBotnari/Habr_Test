@@ -7,8 +7,10 @@ import org.openqa.selenium.interactions.Actions;
 import pages.CartPage;
 import pages.HomePage;
 import pages.ShoppingCartDropDownMenuPage;
+import utlis.Logs;
 
 import static browser.Driver.getDriver;
+import static utlis.screenshots.Screenshots.screenshot;
 
 public class ShoppingCartDropDownMenuPage_Steps {
 
@@ -25,8 +27,8 @@ public class ShoppingCartDropDownMenuPage_Steps {
         homePage.getSpecials().click();
         homePage.getSnackToVodka().click();
         homePage.getBack().click();
-
-
+        Logs.logger.info("Adding of any product in cart");
+        screenshot("Cart has product");
     }
 
 
@@ -35,6 +37,8 @@ public class ShoppingCartDropDownMenuPage_Steps {
         Thread.sleep(1000);
         Assert.assertTrue(sCDDMP.getOrderButton().isDisplayed());
         quantity = Integer.parseInt(sCDDMP.getQuantitty().getText());
+        Logs.logger.info("Assert dropdown cart has appeared");
+        screenshot("dropdown cart has appeared");
     }
 
 
@@ -44,8 +48,8 @@ public class ShoppingCartDropDownMenuPage_Steps {
         int currentQuantity = Integer.parseInt(cartPage.getQuantitty().getAttribute("innerHTML"));
         quantity = quantity - 1;
         Assert.assertEquals(quantity, currentQuantity);
-
-
+Logs.logger.info("The product quantity changed");
+        screenshot("The product quantity changed");
     }
 
 
@@ -54,7 +58,8 @@ public class ShoppingCartDropDownMenuPage_Steps {
         int currentQuantity = Integer.parseInt(cartPage.getQuantitty().getAttribute("innerHTML"));
         quantity = quantity + 1;
         Assert.assertEquals(quantity, currentQuantity);
-
+        Logs.logger.info("The product quantity changed");
+        screenshot("The product quantity changed");
     }
 }
 

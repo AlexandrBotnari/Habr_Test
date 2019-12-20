@@ -43,8 +43,8 @@ public abstract class AbstractPage implements Page {
     private WebElement orderButton;
     @FindBy(xpath = "//li[@class='dropmenu__item dropmenu__item_isdrop ']/a[contains(text(),'Services')]")
     private WebElement services;
-    @FindBy(xpath = "//a[@class='prodimgp']/div[contains(text(),'Lunch')]")
-    private WebElement lunchButton1;
+    @FindBy(xpath = "//a[contains(text(),'Lunch')]")
+    private WebElement lunch;
     @FindBy(xpath = "//ul[@class='dropmenu']//a[contains(@href,'restaurants')]")
     private WebElement restaurants;
     @FindBy(xpath = "//ul[@class='dropmenu']//a[contains(@href,'news')]")
@@ -71,6 +71,8 @@ public abstract class AbstractPage implements Page {
     private WebElement baltiCity;
     @FindBy(xpath = "//div/ul/li/span[contains(text(),'C')]")
     private WebElement chisinauCity;
+    @FindBy(xpath = "//li[./a[contains(@href,'private_events')] and contains(@class,'dropmenu__item')]/div")
+    private WebElement dropdown;
 
     public AbstractPage() {
         PageFactory.initElements(getDriver(), this);
