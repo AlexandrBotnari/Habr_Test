@@ -30,7 +30,7 @@ public abstract class AbstractPage implements Page {
     @FindBy(xpath = "//li[@class='adilinks__item']//a[contains(text(),'Delivery')]")
     private WebElement deliveryButton;
     @FindBy(xpath = "//div[@class='bag']")
-    private WebElement cartButton;
+    private WebElement cart;
     @FindBy(xpath = "//div[@class='selphonenum']")
     private WebElement cityCurrent;
     @FindBy(xpath = "//div[@class='header__addt']//a[contains(text(),'En')]")
@@ -40,7 +40,7 @@ public abstract class AbstractPage implements Page {
     @FindBy(xpath = "//div[@class='header__addt']//a[contains(text(),'Ro')]")
     private WebElement Ro;
     @FindBy(xpath = "//a[@class= 'button button_end' ]")
-    private WebElement orderButton;
+    private WebElement order;
     @FindBy(xpath = "//li[@class='dropmenu__item dropmenu__item_isdrop ']/a[contains(text(),'Services')]")
     private WebElement services;
     @FindBy(xpath = "//a[contains(text(),'Lunch')]")

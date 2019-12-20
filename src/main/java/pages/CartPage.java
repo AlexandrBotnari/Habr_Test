@@ -20,6 +20,8 @@ public class CartPage extends AbstractPage{
     private  List<WebElement> removeFromCart;
     @FindBy(xpath = "//div[contains(@class,'selcount__current')]")
     private WebElement quantitty;
+    @FindBy(xpath = "//div[@class='dbinfo__name']")
+    private WebElement informativeMessage;
 
     public List<WebElement> getRemoveFromCart() {
         return removeFromCart;

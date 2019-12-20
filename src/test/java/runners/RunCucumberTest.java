@@ -2,7 +2,6 @@ package runners;
 
 
 import cucumber.api.CucumberOptions;
-import cucumber.api.SnippetType;
 import cucumber.api.junit.Cucumber;
 import org.junit.runner.RunWith;
 
@@ -13,7 +12,8 @@ import org.junit.runner.RunWith;
         features = "classpath:features",
         plugin = {"pretty", "html:target/cucumber-html-report"},
         glue = {"classpath:steps", "classpath:hooks"},
-        tags ={"@olea, @Alex"}
+        tags ={"@olea, @Alex, @aa"}
+
 
 )
 
