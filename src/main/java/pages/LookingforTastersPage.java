@@ -17,11 +17,10 @@ public class LookingforTastersPage extends AbstractPage {
     private WebElement image_textHolder;
     @FindBy(xpath ="//li[contains(@class,'dropmenu__item dropmenu__item_isdrop ')]/a[contains(text(),'Services')]" )
     private WebElement services;
-    @FindBy(xpath = "//li[@class='dropmenu__item dropmenu__item_isdrop active']//li[2]")
-    private WebElement Program_F2F;
+
     @Override
     public String getUrl() {
-url = "/we_are_looking_for_tasters";
-        return null;
+url = "https://www.andys.md/en/we_are_looking_for_tasters";
+        return url;
     }
 }

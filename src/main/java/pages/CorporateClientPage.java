@@ -20,7 +20,7 @@ public class CorporateClientPage extends AbstractPage {
     private WebElement services;
     @Override
     public String getUrl() {
-        url = "/andys_live";
-        return null;
+        url = "https://www.andys.md/en/andys_live";
+        return url;
     }
 }
