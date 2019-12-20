@@ -7,11 +7,11 @@ Feature: User manages product in basket
     Given any product are added in basket
 
     When "HomePage" is opened
-    And user navigate on "cartButton"
+    And user navigate on "cart"
     Then dropdown cart menu appears
     When user clicks on "plus" button
     Then quantity of this product changes to one more
     When user clicks on "minus" button
     Then quantity of this product changes to one less
-    When user clicks on "orderButton" button
+    When user clicks on "order" button
     Then "CartPage" is opened
