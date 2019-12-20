@@ -24,7 +24,7 @@ public class ClientCardPage extends AbstractPage {
 
     @Override
     public String getUrl() {
-        url = "/clients_card";
+        url = "https://www.andys.md/en/clients_card";
         return url;
     }
 }

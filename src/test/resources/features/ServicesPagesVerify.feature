@@ -1,5 +1,6 @@
 Feature: User look through services information
-@ServicesAB
+  @Alex
+  @ServicesAB
   Scenario: User open every services page
     Given "HomePage" is opened
 
@@ -13,10 +14,10 @@ Feature: User look through services information
     When user clicks on "WeAreLookingForTasters" button
     Then "LookingforTastersPage" is opened
 
-    When user navigate on "services"
+   When user navigate on "services"
     Then dropdown menu appears
     When user clicks on "Program_F2F" button
-    Then "Freind2FriendPage" is opened
+    Then "Friend2FriendPage" is opened
 
     When user navigate on "services"
     Then dropdown menu appears
@@ -35,5 +36,5 @@ Feature: User look through services information
 
     When user navigate on "services"
     Then dropdown menu appears
-    When user clicks on "Banquets" button
+   When user clicks on "Banquets" button
     Then "BanquetsPage" is opened

@@ -1,5 +1,5 @@
 Feature: Change language
-
+  @Alex
   @ChangeLanguageAb
   Scenario Outline: User  changes language to Russian and Romanian
     Given "HomePage" is opened

@@ -1,7 +1,7 @@
 Feature: User manages product in basket
 
   Background: The Andy's pizza main page is displayed
-
+  @Alex
   @DropDMBasketMenuAB
   Scenario: User changes the quantity of added products
     Given any product are added in basket

@@ -23,7 +23,7 @@ public class Friend2FriendPage extends AbstractPage {
 
     @Override
     public String getUrl() {
-        url = "/regulations_of_the_loyalty_program_friends_2_friends";
-        return null;
+        url = "https://www.andys.md/en/regulations_of_the_loyalty_program_friends_2_friends";
+        return url;
     }
 }
