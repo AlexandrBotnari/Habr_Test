@@ -14,25 +14,21 @@ public class RandomProductSelect_Steps {
     Action action = new Action();
     HomePage homePage = new HomePage();
 
+
     @And("^Menu appears$")
-    public void MenuAppears() throws InterruptedException {
+    public void MenuAppears() {
         Assert.assertTrue(homePage.getMenu().isDisplayed());
-        Thread.sleep(3000);
         screenshot("Menu");
-            Logs.logger.info("Assert verification ");
+        Logs.logger.info("Assert verification ");
 
     }
 
     @Then("^Selects random category from Menu list$")
-    public void SelectRandomCategoryFromMenu() throws InterruptedException {
+    public void SelectRandomCategoryFromMenu() {
         action.GetRandomCategory();
-        screenshot("Catogory");
+        screenshot("Category");
     }
 
-    @And("^Category appears$")
-    public void CategoryAppears() {
-
-    }
 
     @Then("^User adds random product from category to cart$")
     public void SelectRandomProduct() {

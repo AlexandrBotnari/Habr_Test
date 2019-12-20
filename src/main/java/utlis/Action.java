@@ -42,6 +42,9 @@ public class Action {
         Logs.logger.info("Enters data in random Field");
         RandomListSelect.GetRandomFromList(careerPage.getInformationFillList()).sendKeys("123456");
     }
+    public void EnterTextField() {
+        careerPage.getOfficeJobsTextBox().sendKeys("qwerqwer");
+    }
 
     public void RestaurantJobsListRandom() {
         Logs.logger.info("Clicks on Random Restaurant Job checkbox");
