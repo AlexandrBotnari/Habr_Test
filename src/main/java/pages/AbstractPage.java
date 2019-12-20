@@ -51,7 +51,7 @@ public abstract class AbstractPage implements Page {
     private WebElement news;
     @FindBy(xpath = "//ul[@class='dropmenu']//a[contains(@href,'cariera')]")
     private WebElement career;
-    @FindBy(xpath = "//a[@class='header__login-act active']")
+    @FindBy(xpath = "//a[contains(@href,'login')]")
     private WebElement login;
     @FindBy(xpath = "(//div/ul/li/span[contains(text(),'B')])[2]")
     private WebElement balti;

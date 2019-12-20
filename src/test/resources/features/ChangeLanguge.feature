@@ -1,5 +1,5 @@
+@Alex
 Feature: Change language
-  @Alex
   @ChangeLanguageAb
   Scenario Outline: User  changes language to <language>
     Given "HomePage" is opened

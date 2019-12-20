@@ -50,6 +50,7 @@ public class ShoppingCartDropDownMenuPage_Steps {
         Assert.assertEquals(quantity, currentQuantity);
 Logs.logger.info("The product quantity changed");
         screenshot("The product quantity changed");
+
     }
 
 
