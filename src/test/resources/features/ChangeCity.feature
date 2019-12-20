@@ -1,6 +1,6 @@
+@Alex
 Feature: Change city
 
-  @Alex
     @ChangeCityAB
   Scenario Outline: User changes the city <location>
     Given "HomePage" is opened

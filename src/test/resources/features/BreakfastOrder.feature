@@ -1,9 +1,8 @@
+@olea
 Feature: Breakfast order
 
   Background:
     Given "HomePage" is opened
-
-  @olea
   Scenario:Verify warning message than select a random dish from 11-00 AM to 7-00 AM
     When user clicks on "menu" button
     Then Menu appears

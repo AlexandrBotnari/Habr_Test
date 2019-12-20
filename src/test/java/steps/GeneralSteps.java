@@ -53,7 +53,6 @@ public class GeneralSteps {
         WebElement webElement = Reflection.getElement((AbstractPage) ScenarioContext.get(Keys.CURRENT_PAGE), button);
         highLighterMethod(webElement);
         screenshot(button);
-        unhighlight(webElement);
         Logs.logger.info("user clicks on " + button + " button");
         webElement.click();
 
@@ -66,7 +65,6 @@ public class GeneralSteps {
         WebElement webElement = Reflection.getElement((AbstractPage) ScenarioContext.get(Keys.CURRENT_PAGE), element);
         highLighterMethod(webElement);
         screenshot(element);
-        unhighlight(webElement);
         Logs.logger.info("menu services appears");
         Assert.assertTrue(webElement.isDisplayed());
     }

@@ -1,8 +1,8 @@
+@Alex
 Feature: Order lunch from Andy's pizza
 
   Background:
     Given "HomePage" is opened
-  @Alex
   @LunchABPosistive
   Scenario:User opens lunch page
     When user navigate on "menu"

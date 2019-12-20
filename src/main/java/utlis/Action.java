@@ -19,6 +19,7 @@ public class Action {
     }
 
     public void GetRandomFilter() {
+        Logs.logger.info("Gets Random Filter");
         RandomListSelect.GetRandomFromList(restaurantsPage.getFilter()).click();
     }
 

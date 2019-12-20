@@ -1,9 +1,8 @@
+@olea
 Feature: News
 
   Background:
     Given "HomePage" is opened
-
-  @olea
   Scenario: Verify a news is opened and back to news
 
     When user clicks on "news" button

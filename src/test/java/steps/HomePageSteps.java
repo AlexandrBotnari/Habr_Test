@@ -16,7 +16,7 @@ public class HomePageSteps {
     HomePage homePage = new HomePage();
 
     @Then("^current \"(.*)\" field changes to chosen$")
-    public void currentLocationFieldChangesToChosen(String location) throws InterruptedException {
+    public void currentLocationFieldChangesToChosen(String location) throws Throwable {
         Thread.sleep(2000);
 
         if (location.equals("chisinau")) {
@@ -27,6 +27,7 @@ public class HomePageSteps {
             Assert.assertTrue(homePage.getCityCurrent().getText().toLowerCase().startsWith(location));
         Logs.logger.info("Assert location changed");
         screenshot("Location changed");
+        finalize();
     }
 
     @Then("^drop down menu appears$")
@@ -39,11 +40,12 @@ public class HomePageSteps {
 
 
     @Then("^page changes language to \"(.*)\"$")
-    public void changeLanguageToLanguage(String language) {
+    public void changeLanguageToLanguage(String language) throws Throwable {
         Assert.assertTrue(
                 getDriver().getCurrentUrl().endsWith(language.toLowerCase()));
         Logs.logger.info("Assert language has changes (by url)");
         screenshot("language changet to"+ language);
+        finalize();
     }
 
 

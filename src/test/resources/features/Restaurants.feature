@@ -1,5 +1,6 @@
-Feature:
-#  @olea
+@olea
+Feature: Restaurants filter
+
   Background:
     Given "HomePage" is opened
 
@@ -7,5 +8,4 @@ Feature:
     When user clicks on "restaurants" button
     Then "RestaurantsPage" is opened
     When user selects random a filter
-    #When user clicks on "filter" button
     Then verify Restaurants list is filtered

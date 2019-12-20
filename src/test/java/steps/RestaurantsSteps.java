@@ -5,6 +5,7 @@ import cucumber.api.java.en.When;
 import org.openqa.selenium.WebElement;
 import pages.RestaurantsPage;
 import utlis.Action;
+import utlis.Logs;
 
 public class RestaurantsSteps {
     RestaurantsPage restaurantsPage = new RestaurantsPage();
@@ -13,6 +14,7 @@ public class RestaurantsSteps {
 
     @Then("^verify Restaurants list is filtered$")
     public boolean verifyRestaurantsListIsFiltered() {
+        Logs.logger.info("Restaurants are filtered");
         int s1 = 0;
         for (WebElement rest : restaurantsPage.getRestaurantsList()) {
             if (rest.isDisplayed()) {
