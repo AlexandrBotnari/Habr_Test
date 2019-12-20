@@ -19,6 +19,7 @@ public class Action {
     }
 
     public void GetRandomFilter() {
+        Logs.logger.info("Gets Random Filter");
         RandomListSelect.GetRandomFromList(restaurantsPage.getFilter()).click();
     }
 
@@ -40,6 +41,9 @@ public class Action {
     public void EnterDataInRandomField() {
         Logs.logger.info("Enters data in random Field");
         RandomListSelect.GetRandomFromList(careerPage.getInformationFillList()).sendKeys("123456");
+    }
+    public void EnterTextField() {
+        careerPage.getOfficeJobsTextBox().sendKeys("qwerqwer");
     }
 
     public void RestaurantJobsListRandom() {

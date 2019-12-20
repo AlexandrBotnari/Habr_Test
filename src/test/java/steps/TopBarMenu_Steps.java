@@ -8,6 +8,8 @@ import pages.DeliveryPage;
 import pages.FeedbackPage;
 import utlis.Logs;
 
+import static utlis.screenshots.Screenshots.screenshot;
+
 @Getter
 public class TopBarMenu_Steps {
 
@@ -18,20 +20,23 @@ public class TopBarMenu_Steps {
     @Then("^Feedback Page is displayed$")
     public void FeedbackPageIsDisplayed() {
         Assert.assertTrue(feedbackPage.getFeedbackAssertCheck().isDisplayed());
-        Logs.logger.info("Assert verification ");
+        screenshot("Feedback Assert");
+        Logs.logger.info("Feedback Assert verification ");
     }
 
     @Then("^Contacts page is displayed$")
     public void ContactsPageDisplayed() {
         Assert.assertTrue(contactsPage.getContactsHeader().isDisplayed());
-        Logs.logger.info("Assert verification ");
+        screenshot("Feedback Assert");
+        Logs.logger.info("Contacts Assert verification ");
 
     }
 
     @Then("^Delivery page is displayed$")
     public void DeliveryDisplayed() {
         Assert.assertTrue(deliveryPage.getDeliveryHeader().isDisplayed());
-        Logs.logger.info("Assert verification ");
+        screenshot("Feedback Assert");
+        Logs.logger.info("Delivery Assert verification ");
 
     }
 }

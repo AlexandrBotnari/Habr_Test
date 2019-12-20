@@ -1,5 +1,6 @@
+@Alex
 Feature: User look through services information
-  @Alex
+
   @ServicesAB
   Scenario: User open every services page
     Given "HomePage" is opened

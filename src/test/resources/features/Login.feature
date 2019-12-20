@@ -1,8 +1,9 @@
+@olea
 Feature: Login
 
   Background:
     Given "HomePage" is opened
-#  @olea
+
   Scenario: Verify Log In with correct credentials
     When user clicks on "login" button
     Then "LoginPage" is opened

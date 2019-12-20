@@ -18,6 +18,12 @@ public class CareerPage extends AbstractPage {
     @FindBy(xpath = "//div[@class='infoctgs']")
     private WebElement informationListBlock;
 
+    @FindBy(xpath = "//div[contains(text(),'Office Jobs:')]")
+    private WebElement  officeJobsButton;
+
+    @FindBy(xpath = "//textarea[@name='comment']")
+    private WebElement officeJobsTextBox;
+
     @FindBy(xpath = "//div[contains(text(),'Restaurant Jobs:')]")
     private WebElement restaurantTabButton;
 

@@ -1,11 +1,11 @@
 Feature: Andy's Test
 
-  @aa
+@aa
   Scenario: Check product is presented on cart page and removal possibility
     Given "HomePage" is opened
-    When user clicks on "menuButton" button
+    When user clicks on "menu" button
     And Random product added to cart
-    When user navigate on "cartButton"
-    Then user clicks on "orderButton" button
+    When user navigate on "cart"
+    Then user clicks on "order" button
     Then Removes one product from cart
     And Check that product where removed

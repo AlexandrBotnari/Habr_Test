@@ -3,6 +3,7 @@ package pages;
 import lombok.Getter;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
 @Getter
 public class HomePage extends AbstractPage {
 
@@ -10,8 +11,9 @@ public class HomePage extends AbstractPage {
     private WebElement menu;
     @FindBy(xpath = "//div[@class='bag__count cart_count']")
     private WebElement cartCounter;
-@FindBy(xpath = "//div[@class='modal-menu__content']")
-private WebElement menumap;
+
+    @FindBy(xpath = "//div[@class='modal-menu__content']")
+    private WebElement menumap;
     @FindBy(xpath = "//a[@class='selcount__action selcount__minus']")
     private WebElement minus;
     @FindBy(xpath = "//a[@class='selcount__action selcount__plus']")
@@ -22,22 +24,18 @@ private WebElement menumap;
     private WebElement snackToVodka;
     @FindBy(xpath = "//div[@class='header__logo-wrapper']/a")
     private WebElement back;
-    @FindBy(xpath = "//div[@class='modal-menu modal-menu_open']//a[1]//img[1]" )
+    @FindBy(xpath = "//div[@class='modal-menu modal-menu_open']//a[1]//img[1]")
     private WebElement specials;
     @FindBy(xpath = "//div[@class='modal-menu modal-menu_open']//a[2]")
     private WebElement pizza;
+    @FindBy(xpath = "/html[1]/body[1]/header[1]/div[1]/div[1]/div[3]/div[2]/div[1]/ul[1]/li[4]/a[1]")
+    private WebElement careerPage;
 
     public HomePage() {
         super();
     }
 
-    public static void CartCounterAssertCheck() {
-        //     Assert.assertTrue(homePage.cartCounter.isDisplayed());
-    }
 
-
-    @FindBy(xpath = "/html[1]/body[1]/header[1]/div[1]/div[1]/div[3]/div[2]/div[1]/ul[1]/li[4]/a[1]")
-    private WebElement careerPage;
 
     @Override
     public String getUrl() {
