@@ -4,21 +4,26 @@ import org.openqa.selenium.WebDriver;
 
 public class Driver {
 
-
-    private static PropertyReader propertyReader;
     private static WebDriver driver;
 
-   public static void createDriver(DriverType driverType){
-       driver = DriverFactory.instantiateDriver(driverType);
-   }
+    private Driver() {
+    }
+
+    private static WebDriver createDriver() {
+        String browser = PropertyReader.getProperty("browser").toUpperCase();
+        return DriverFactory.instantiateDriver(DriverType.valueOf(browser));
+    }
 
     public static WebDriver getDriver() {
+        if (driver == null)
+            driver = createDriver();
         return driver;
     }
 
     public static void closeDriver() {
         if (driver != null) {
-            driver.close();
+            driver.quit();
+            driver = null;
         }
     }
 }
