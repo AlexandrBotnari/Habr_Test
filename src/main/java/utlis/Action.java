@@ -26,6 +26,7 @@ public class Action {
     public void GetRandomProduct() {
         Logs.logger.info("Gets Random Product");
         RandomListSelect.GetRandomFromList(menuPage.getProductList()).click();
+
     }
 
     public void RemoveRandomFromCart() {
