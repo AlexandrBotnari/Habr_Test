@@ -11,11 +11,13 @@ public class ToppingMenuPage extends AbstractPage {
 
     @FindBy(xpath = "//div[@class='modal-product__info']")
     private WebElement toppingMenu;
+
     @FindBy(xpath = "//a[@class='selcount__action selcount__minus']")
     private WebElement minus;
 
-    @FindBy(xpath = "//a[@class='selcount__action selcount__plus']")
+    @FindBy(xpath = "(//a[@class='selcount__action selcount__plus'])[1]")
     private WebElement plus;
+
     @FindBy(xpath = "//div[@class='selcount__current selcount__current_zero']")
     private WebElement number;
 

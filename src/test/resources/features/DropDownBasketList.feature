@@ -1,4 +1,5 @@
 @Alex
+@DemoRun
 Feature: User manages product in basket
 
   Background: The Andy's pizza main page is displayed

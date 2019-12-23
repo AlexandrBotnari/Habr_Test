@@ -1,3 +1,4 @@
+@DemoRun
 Feature: Andy's Test
 
 @aa

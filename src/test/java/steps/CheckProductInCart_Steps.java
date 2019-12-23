@@ -19,7 +19,7 @@ public class CheckProductInCart_Steps {
     public void RandomProductAddedToCart() {
         action.GetRandomCategory();
         action.GetRandomProduct();
-        Logs.logger.info("Adds random product to cart ");
+        Logs.logger.info("Adds random product to cart");
     }
 
     @Then("^Removes one product from cart$")

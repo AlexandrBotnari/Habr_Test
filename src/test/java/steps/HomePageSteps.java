@@ -41,11 +41,10 @@ public class HomePageSteps {
 
     @Then("^page changes language to \"(.*)\"$")
     public void changeLanguageToLanguage(String language) throws Throwable {
-        Assert.assertTrue(
-                getDriver().getCurrentUrl().endsWith(language.toLowerCase()));
+        Assert.assertTrue(getDriver().getCurrentUrl().endsWith(language.toLowerCase()));
+
         Logs.logger.info("Assert language has changes (by url)");
         screenshot("language changet to"+ language);
-        finalize();
     }
 
 

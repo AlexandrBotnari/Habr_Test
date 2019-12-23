@@ -1,3 +1,4 @@
+@DemoRun
 @olea
 Feature: Topping menu for pizza
 

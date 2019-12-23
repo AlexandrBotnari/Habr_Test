@@ -1,3 +1,4 @@
+@DemoRun
 @Alex
 Feature: Change city
 

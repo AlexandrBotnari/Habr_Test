@@ -1,3 +1,4 @@
+@DemoRun
 @Alex
 Feature: Order lunch from Andy's pizza
 

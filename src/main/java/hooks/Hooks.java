@@ -24,7 +24,6 @@ public class Hooks {
         Screenshots.setScenario(scenario);
         currentScenario = scenario;
         propertyReader = new PropertyReader();
-      //  Driver.createDriver(DriverType.CHROME);
         Driver.getDriver().manage().window().maximize();
         Driver.getDriver().get(PropertyReader.getProperty("HomePage.url"));
         Logs.logger.info("Start of scenario " + currentScenario.getName());

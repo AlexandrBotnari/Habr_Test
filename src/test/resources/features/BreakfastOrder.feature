@@ -1,3 +1,4 @@
+@DemoRun
 @olea
 Feature: Breakfast order
 
