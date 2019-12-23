@@ -17,10 +17,6 @@ public class Driver {
         return instance;
     }
 
-    public WebDriver getDriver() {
-        return driver;
-    }
-
     private Driver() {
         driver = createDriver();
     }
@@ -33,7 +29,7 @@ public class Driver {
     public void closeDriver() {
         if (driver != null) {
             driver.quit();
-            driver = null;
+            instance = null;
         }
     }
 }
