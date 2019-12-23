@@ -1,26 +1,36 @@
 package browser;
 
+import lombok.Getter;
 import org.openqa.selenium.WebDriver;
 
 public class Driver {
 
-    private static WebDriver driver;
+    @Getter
+    private WebDriver driver;
 
-    private Driver() {
+    private static Driver instance = null;
+
+    public static Driver getInstance() {
+        if(instance == null) {
+            instance = new Driver();
+        }
+        return instance;
     }
 
-    private static WebDriver createDriver() {
+    public WebDriver getDriver() {
+        return driver;
+    }
+
+    private Driver() {
+        driver = createDriver();
+    }
+
+    private WebDriver createDriver() {
         String browser = PropertyReader.getProperty("browser").toUpperCase();
         return DriverFactory.instantiateDriver(DriverType.valueOf(browser));
     }
 
-    public static WebDriver getDriver() {
-        if (driver == null)
-            driver = createDriver();
-        return driver;
-    }
-
-    public static void closeDriver() {
+    public void closeDriver() {
         if (driver != null) {
             driver.quit();
             driver = null;

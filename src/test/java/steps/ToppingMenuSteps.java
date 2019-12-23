@@ -1,16 +1,16 @@
 package steps;
 
+import browser.Driver;
 import cucumber.api.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.ToppingMenuPage;
 
-import static browser.Driver.getDriver;
 
 public class ToppingMenuSteps {
     ToppingMenuPage toppingMenuPage = new ToppingMenuPage();
-    WebDriverWait wait = new WebDriverWait(getDriver(), 5);
+    WebDriverWait wait = new WebDriverWait(Driver.getInstance().getDriver(), 5);
 
     @Then("^Topping Menu is opened$")
     public void toppingMenuIsOpened() {

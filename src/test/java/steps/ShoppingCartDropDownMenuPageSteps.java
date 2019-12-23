@@ -1,5 +1,6 @@
 package steps;
 
+import browser.Driver;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import org.junit.Assert;
@@ -9,7 +10,6 @@ import pages.HomePage;
 import pages.ShoppingCartDropDownMenuPage;
 import utlis.Logs;
 
-import static browser.Driver.getDriver;
 import static utlis.screenshots.Screenshots.screenshot;
 
 public class ShoppingCartDropDownMenuPageSteps {

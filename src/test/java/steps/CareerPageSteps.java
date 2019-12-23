@@ -16,6 +16,7 @@ public class CareerPageSteps {
         screenshot("Enters Data");
         Logs.logger.info("Enters Data ");
 
+
     }
 
 
