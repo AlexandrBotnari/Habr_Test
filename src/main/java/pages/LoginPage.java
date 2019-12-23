@@ -6,8 +6,8 @@ import org.openqa.selenium.support.FindBy;
 
 
 @Getter
-public class LoginPage extends AbstractPage {
-    /////Login form ////////
+public class LoginPage extends AndysPage {
+
     @FindBy(xpath = "//input[@id='email']")
     private WebElement email;
     @FindBy(xpath = "//input[@class='button button_s']")

@@ -12,12 +12,11 @@ import utlis.Logs;
 import static browser.Driver.getDriver;
 import static utlis.screenshots.Screenshots.screenshot;
 
-public class ShoppingCartDropDownMenuPage_Steps {
+public class ShoppingCartDropDownMenuPageSteps {
 
     protected int quantity;
     ShoppingCartDropDownMenuPage sCDDMP = new ShoppingCartDropDownMenuPage();
     HomePage homePage = new HomePage();
-    Actions actions = new Actions(getDriver());
     CartPage cartPage = new CartPage();
 
     @Given("^any product are added in basket$")

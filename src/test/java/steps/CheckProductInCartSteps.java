@@ -9,7 +9,7 @@ import utlis.Logs;
 
 import static utlis.screenshots.Screenshots.screenshot;
 
-public class CheckProductInCart_Steps {
+public class CheckProductInCartSteps {
 
     Action action = new Action();
     CartPage cartPage = new CartPage();

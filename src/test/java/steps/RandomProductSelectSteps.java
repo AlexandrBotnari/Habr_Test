@@ -9,7 +9,7 @@ import utlis.Logs;
 
 import static utlis.screenshots.Screenshots.screenshot;
 
-public class RandomProductSelect_Steps {
+public class RandomProductSelectSteps {
 
     Action action = new Action();
     HomePage homePage = new HomePage();

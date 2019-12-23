@@ -10,7 +10,7 @@ import java.util.List;
 
 @Getter
 @Setter
-public class BanquetsPage extends AbstractPage {
+public class BanquetsPage extends AndysPage {
     @FindBy(xpath = "//div[@class='img-header__title']")
     private WebElement image_textHolder;
     @FindBy(xpath = "//h1[contains(text(),'We like to be chosen by big companies')]")

@@ -12,4 +12,4 @@ Feature: Breakfast order
     When user clicks on "breakfast" button
     Then "BreakfastPage" is opened
     When user clicks on "order" button
-    Then warning message "This dish is available for order from 07:00 to 11:00" is displayed
+    Then validate time restriction for breakfast

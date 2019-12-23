@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 
 @Getter
 @Setter
-public class Friend2FriendPage extends AbstractPage {
+public class Friend2FriendPage extends AndysPage {
 
     public Friend2FriendPage() {
         super();

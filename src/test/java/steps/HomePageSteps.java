@@ -15,19 +15,19 @@ public class HomePageSteps {
 
     HomePage homePage = new HomePage();
 
+
     @Then("^current \"(.*)\" field changes to chosen$")
     public void currentLocationFieldChangesToChosen(String location) throws Throwable {
         Thread.sleep(2000);
 
         if (location.equals("chisinau")) {
             location = "210-210";
-            Assert.assertTrue(homePage.getCityCurrent().getText().toLowerCase().endsWith(location));
+            Assert.assertTrue(homePage.getCityCurrent().getText().toLowerCase().contains(location));
         } else
 
-            Assert.assertTrue(homePage.getCityCurrent().getText().toLowerCase().startsWith(location));
+            Assert.assertTrue(homePage.getCityCurrent().getText().toLowerCase().contains(location));
         Logs.logger.info("Assert location changed");
         screenshot("Location changed");
-        finalize();
     }
 
     @Then("^drop down menu appears$")

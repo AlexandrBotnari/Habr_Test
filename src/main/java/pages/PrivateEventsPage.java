@@ -3,7 +3,7 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class PrivateEventsPage extends AbstractPage {
+public class PrivateEventsPage extends AndysPage {
 
     public PrivateEventsPage() {
         super();

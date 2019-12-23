@@ -13,8 +13,6 @@ import org.junit.runner.RunWith;
         plugin = {"pretty", "html:target/cucumber-html-report"},
         glue = {"classpath:steps", "classpath:hooks"},
         tags ="@DemoRun"
-
-
 )
 
 public class RunCucumberTest {

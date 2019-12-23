@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 
 
 @Getter
-public class FeedbackPage extends AbstractPage {
+public class FeedbackPage extends AndysPage {
 
     @FindBy(xpath = "//p[contains(text(),'All feedbacks are saved on the website and will be')]")
     private WebElement feedbackAssertCheck;

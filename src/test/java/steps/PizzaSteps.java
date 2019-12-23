@@ -8,7 +8,6 @@ public class PizzaSteps {
 
     @When("^user opens random product$")
     public void userOpensRandomProductPreview() {
-
         action.GetRandomProductPhoto();
     }
 }

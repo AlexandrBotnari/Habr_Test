@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 @Getter
-public class ToppingMenuPage extends AbstractPage {
+public class ToppingMenuPage extends AndysPage {
     @FindBy(xpath = "//button[@class='button button_add add_to_cart']")
     private WebElement order;
 

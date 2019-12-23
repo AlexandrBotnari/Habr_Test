@@ -1,6 +1,6 @@
 package pages;
 
-public class PizzaPage extends AbstractPage {
+public class PizzaPage extends AndysPage {
     public PizzaPage() {
         super();
     }

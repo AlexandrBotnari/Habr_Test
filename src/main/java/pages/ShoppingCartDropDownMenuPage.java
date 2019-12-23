@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 @Getter
-public class ShoppingCartDropDownMenuPage extends AbstractPage {
+public class ShoppingCartDropDownMenuPage extends AndysPage {
     public ShoppingCartDropDownMenuPage() {
         super();
     }

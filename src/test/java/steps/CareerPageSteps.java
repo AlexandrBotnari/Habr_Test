@@ -6,7 +6,7 @@ import utlis.Logs;
 
 import static utlis.screenshots.Screenshots.screenshot;
 
-public class CareerPage_Steps {
+public class CareerPageSteps {
     Action action = new Action();
 
 

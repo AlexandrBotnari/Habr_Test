@@ -1,25 +1,17 @@
 package steps;
 
+import cucumber.api.java.cs.A;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import org.joda.time.LocalTime;
 import org.junit.Assert;
 import pages.AbstractPage;
 import pages.LunchPage;
+import utlis.Logs;
 
 public class LunchMenuSteps extends AbstractPage {
     LunchPage lunchPage = new LunchPage();
-
-     @And("^time is between 12:00 and 15:00$")
-    public void timeIsBetween() {
-
-        final LocalTime before = new LocalTime(12, 0, 0, 0);
-        final LocalTime after = new LocalTime(15, 0, 0, 0);
-        LocalTime currentTime = new LocalTime();
-
-        Assert.assertTrue("It is not time yet",currentTime.isAfter(before) && currentTime.isBefore(after));
-
-    }
+    String cartStatus = lunchPage.getCartIndex().getText();
 
     @Override
     public String getUrl() {
@@ -28,14 +20,19 @@ public class LunchMenuSteps extends AbstractPage {
     }
 
 
-    @Then("^lunch adds to cart$")
-    public void lunchAddsToCart() {
 
-         Assert.assertNotNull(lunchPage.getOrderButton());
-    }
-
-    @Then("^button lights with yellow color$")
-    public void buttonLightsWithYellowColor() {
-         Assert.assertNotNull(lunchPage.getBuyProductLunch());
+    @Then("^validate time restriction$")
+    public void validateTimeRestriction() {
+        final LocalTime before = new LocalTime(12, 0, 0, 0);
+        final LocalTime after = new LocalTime(15, 0, 0, 0);
+        LocalTime currentTime = new LocalTime();
+        if(currentTime.isAfter(before) && currentTime.isBefore(after)){
+            Assert.assertNotEquals(cartStatus,lunchPage.getCartIndex().getText());
+            Logs.logger.info("Lunch added to cart at: " + currentTime + "| Allowed time for adding is between: " + before + " and " + after);
+        }
+        else {
+            Assert.assertEquals(cartStatus,lunchPage.getCartIndex().getText());
+            Logs.logger.info("Time restriction - Allowed time for adding is between: " + before + " and " + after);
+        }
     }
 }

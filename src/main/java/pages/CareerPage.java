@@ -9,7 +9,7 @@ import java.util.List;
 
 @Getter
 @PageName(name = "Career Page")
-public class CareerPage extends AbstractPage {
+public class CareerPage extends AndysPage {
 
 
     @FindBy(xpath = "//input[@class=\"input-text input-text_form\"]")
