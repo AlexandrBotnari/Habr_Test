@@ -2,6 +2,7 @@ package steps;
 
 import Context.Keys;
 import Context.ScenarioContext;
+import browser.Driver;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
@@ -10,24 +11,24 @@ import org.openqa.selenium.interactions.Actions;
 import pages.AbstractPage;
 import utlis.Logs;
 import utlis.reflectionHelper.Reflection;
-import utlis.screenshots.Screenshots;
 
 import java.lang.reflect.InvocationTargetException;
 
-import static browser.Driver.getDriver;
-import static utlis.screenshots.Screenshots.*;
+import static utlis.screenshots.Screenshots.highLighterMethod;
 import static utlis.screenshots.Screenshots.screenshot;
 
 
 public class GeneralSteps {
 
+
+
     Reflection reflection = new Reflection();
 
     public static String getUrl() {
-        return getDriver().getCurrentUrl();
+        return Driver.getInstance().getDriver().getCurrentUrl();
     }
 
-    Actions actions = new Actions(getDriver());
+    Actions actions = new Actions(Driver.getInstance().getDriver());
 
     @Then("^\"(.*)\" is opened$")
     public void isOpened(String pageName) throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {

@@ -1,13 +1,14 @@
 package steps;
 
 
+import browser.Driver;
 import cucumber.api.java.en.Then;
 import lombok.Getter;
 import org.junit.Assert;
 import pages.HomePage;
 import utlis.Logs;
 
-import static browser.Driver.getDriver;
+
 import static utlis.screenshots.Screenshots.screenshot;
 
 @Getter
@@ -41,7 +42,7 @@ public class HomePageSteps {
 
     @Then("^page changes language to \"(.*)\"$")
     public void changeLanguageToLanguage(String language) throws Throwable {
-        Assert.assertTrue(getDriver().getCurrentUrl().endsWith(language.toLowerCase()));
+        Assert.assertTrue(Driver.getInstance().getDriver().getCurrentUrl().endsWith(language.toLowerCase()));
 
         Logs.logger.info("Assert language has changes (by url)");
         screenshot("language changet to"+ language);

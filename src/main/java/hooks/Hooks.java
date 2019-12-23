@@ -1,14 +1,11 @@
 package hooks;
 
 import browser.Driver;
-import browser.DriverType;
 import browser.PropertyReader;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import lombok.Getter;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 import utlis.Logs;
 import utlis.screenshots.Screenshots;
 
@@ -16,17 +13,14 @@ import utlis.screenshots.Screenshots;
 @Getter
 public class Hooks {
 
-    private PropertyReader propertyReader;
-    private Scenario currentScenario;
+    private PropertyReader propertyReader = new PropertyReader();
 
     @Before
     public void startDriver(Scenario scenario) {
         Screenshots.setScenario(scenario);
-        currentScenario = scenario;
-        propertyReader = new PropertyReader();
-        Driver.getDriver().manage().window().maximize();
-        Driver.getDriver().get(PropertyReader.getProperty("HomePage.url"));
-        Logs.logger.info("Start of scenario " + currentScenario.getName());
+        Driver.getInstance().getDriver().manage().window().maximize();
+        Driver.getInstance().getDriver().get(PropertyReader.getProperty("HomePage.url"));
+        Logs.logger.info("Start of scenario " + scenario.getName());
     }
 
 
@@ -35,10 +29,8 @@ public class Hooks {
         if (scenario.isFailed())
             Screenshots.screenshot("onFail");
 
-        Driver.closeDriver();
-
-//        Driver.getDriver().quit();
-        Logs.logger.info("End of Scenario " + currentScenario.getName());
+        Driver.getInstance().closeDriver();
+        Logs.logger.info("End of Scenario " + scenario.getName());
     }
 
 }

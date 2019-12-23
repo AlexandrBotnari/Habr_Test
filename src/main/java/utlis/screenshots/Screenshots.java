@@ -1,5 +1,6 @@
 package utlis.screenshots;
 
+import browser.Driver;
 import cucumber.api.Scenario;
 import org.apache.commons.io.FileUtils;
 import org.joda.time.LocalDateTime;
@@ -12,7 +13,6 @@ import org.openqa.selenium.WebElement;
 
 import java.io.File;
 
-import static browser.Driver.getDriver;
 
 public class Screenshots {
     private final static DateTimeFormatter formatter = DateTimeFormat.forPattern("yyyy-MM-dd-HH-mm-ss");
@@ -29,7 +29,7 @@ public class Screenshots {
 
     public static void screenshot(String name) {
         try {
-            TakesScreenshot ts = (TakesScreenshot) getDriver();
+            TakesScreenshot ts = (TakesScreenshot) Driver.getInstance().getDriver();
             byte[] source = ts.getScreenshotAs(OutputType.BYTES);
             scenario.embed(source, "image/png");
             FileUtils.writeByteArrayToFile(new File("target/screenshots/" + scenario.getName() + "/" + time + "/" + name + ".png"), source);
@@ -40,7 +40,7 @@ public class Screenshots {
     }
 
     public static void highLighterMethod(WebElement el) {
-        JavascriptExecutor js = (JavascriptExecutor) getDriver();
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getInstance().getDriver();
         js.executeScript("arguments[0].setAttribute('style', 'border: 2px solid red;');", el);
 
     }
