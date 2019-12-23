@@ -1,27 +1,23 @@
 package browser;
 
-import java.io.IOException;
-import java.util.Properties;
+import org.apache.commons.configuration.Configuration;
+import org.apache.commons.configuration.ConfigurationException;
+import org.apache.commons.configuration.PropertiesConfiguration;
 
 public class PropertyReader {
 
+    private static Configuration properties;
 
-    private static Properties properties;
 
     public PropertyReader() {
-        if (properties == null) {
-            properties = new Properties();
-            try {
-                properties.load(Driver.class.getClassLoader().getResourceAsStream("application.properties"));
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        try {
+            properties = new PropertiesConfiguration("application.properties");
+        } catch (ConfigurationException e) {
+            e.printStackTrace();
         }
     }
 
     public static String getProperty(String key) {
-        return properties.getProperty(key);
+        return properties.getString(key);
     }
-
 }
