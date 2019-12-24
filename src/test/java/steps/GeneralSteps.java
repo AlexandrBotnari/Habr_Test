@@ -55,6 +55,9 @@ public class GeneralSteps {
         Logs.logger.info("user clicks on " + button + " button");
         webElement.click();
 
+
+
+
     }
 
 

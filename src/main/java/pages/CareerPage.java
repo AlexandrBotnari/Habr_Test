@@ -19,7 +19,7 @@ public class CareerPage extends AndysPage {
     private WebElement informationListBlock;
 
     @FindBy(xpath = "//div[contains(text(),'Office Jobs:')]")
-    private WebElement  officeJobsButton;
+    private WebElement officeJobsButton;
 
     @FindBy(xpath = "//textarea[@name='comment']")
     private WebElement officeJobsTextBox;
@@ -27,7 +27,7 @@ public class CareerPage extends AndysPage {
     @FindBy(xpath = "//div[contains(text(),'Restaurant Jobs:')]")
     private WebElement restaurantTabButton;
 
-    @FindBy(xpath = "//div[@id='tab_content_1']//label[@class='input-checkbox']//div[1]")
+    @FindBy(xpath = "//div[@id='tab_content_1']/div[@class='tab_content_flex']//label[@class='input-checkbox']")
     private List<WebElement> restaurantJobsList;
 
     @FindBy(xpath = "//div[contains(text(),'Factory Jobs:')]")
@@ -42,6 +42,17 @@ public class CareerPage extends AndysPage {
     @FindBy(xpath = "//div[contains(text(),'Fill information about you')]")
     private WebElement informationFieldMenu;
 
+    @FindBy(xpath = "//input[@name='name']")
+    private WebElement nameField;
+
+    @FindBy(xpath = "//input[@name='old']")
+    private WebElement oldField;
+
+    @FindBy(xpath = "//input[@id='phone']")
+    private WebElement phoneField;
+
+    @FindBy(xpath = "//input[@name='email']")
+    private WebElement mailField;
 
     @Override
     public String getUrl() {

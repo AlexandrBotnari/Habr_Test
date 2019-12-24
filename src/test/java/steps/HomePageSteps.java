@@ -3,11 +3,11 @@ package steps;
 
 import browser.Driver;
 import cucumber.api.java.en.Then;
+import cucumber.api.java.uk.Нехай;
 import lombok.Getter;
 import org.junit.Assert;
 import pages.HomePage;
 import utlis.Logs;
-
 
 import static utlis.screenshots.Screenshots.screenshot;
 
@@ -41,11 +41,19 @@ public class HomePageSteps {
 
 
     @Then("^page changes language to \"(.*)\"$")
-    public void changeLanguageToLanguage(String language) throws Throwable {
+    public void changeLanguageToLanguage(String language) {
         Assert.assertTrue(Driver.getInstance().getDriver().getCurrentUrl().endsWith(language.toLowerCase()));
 
-        Logs.logger.info("Assert language has changes (by url)");
-        screenshot("language changet to"+ language);
+        if (language.equals("Ru")) {
+            Assert.assertEquals("Доставка", homePage.getDeliveryButton().getText());
+            Assert.assertEquals("Отзывы", homePage.getFeedbackButton().getText());
+        }else {
+            Assert.assertEquals("Livrare", homePage.getDeliveryButton().getText());
+            Assert.assertEquals("Feedback", homePage.getFeedbackButton().getText());
+        }
+
+        Logs.logger.info("Language changed to " + language);
+        screenshot("Language changed to " + language);
     }
 
 

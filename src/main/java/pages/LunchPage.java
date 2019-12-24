@@ -12,7 +12,7 @@ public class LunchPage extends AndysPage{
     }
 
 
-    @FindBy(xpath = "//div[@class='product__buy']")
+    @FindBy(xpath = "//div[contains(@class,'product__buy')]")
     private WebElement order;
 
     @FindBy(xpath = "//div[@class='product__date']")

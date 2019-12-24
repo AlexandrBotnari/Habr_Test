@@ -1,7 +1,10 @@
 package utlis;
 
 import lombok.Getter;
+import org.junit.Assert;
+import org.openqa.selenium.WebElement;
 import pages.*;
+import utlis.screenshots.Screenshots;
 
 @Getter
 public class Action {
@@ -49,12 +52,17 @@ public class Action {
 
     public void RestaurantJobsListRandom() {
         Logs.logger.info("Clicks on Random Restaurant Job checkbox");
-        RandomListSelect.GetRandomFromList(careerPage.getRestaurantJobsList()).click();
+        WebElement webElement = RandomListSelect.GetRandomFromList(careerPage.getRestaurantJobsList());
+        webElement.click();
+        Screenshots.screenshot("Chosen checkBoxes");
     }
 
     public void FactoryJobsListRandom() {
         Logs.logger.info("Clicks on Random Factory Job checkbox");
-        RandomListSelect.GetRandomFromList(careerPage.getFactoryJobsList()).click();
+       WebElement webElement = RandomListSelect.GetRandomFromList(careerPage.getFactoryJobsList());
+                webElement.click();
+        Screenshots.screenshot("Chosen checkBoxes");
+
     }
 
     public void RandomCheckBoxesList() {

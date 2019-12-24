@@ -17,11 +17,11 @@ public class AndysPage extends AbstractPage {
     private WebElement KidsParties;
     @FindBy(xpath = "//ul[@class='verlist__col']//a[contains(text(),'Banquets')]")
     private WebElement Banquets;
-    @FindBy(xpath = "//li[@class='adilinks__item']//a[contains(text(),'Feedback')]")
+    @FindBy(xpath = "//li[@class='adilinks__item']//a[contains(@href,'feedback')]")
     private WebElement feedbackButton;
     @FindBy(xpath = "//li[@class='adilinks__item']//a[contains(text(),'Contacts')]")
     private WebElement contactsButton;
-    @FindBy(xpath = "//li[@class='adilinks__item']//a[contains(text(),'Delivery')]")
+    @FindBy(xpath = "//li[@class='adilinks__item']//a[contains(@href,'delivery')]")
     private WebElement deliveryButton;
     @FindBy(xpath = "//div[@class='bag']")
     private WebElement cart;

@@ -1,8 +1,17 @@
 package steps;
 
+import Context.Keys;
+import Context.ScenarioContext;
+import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+import org.junit.Assert;
+import pages.AbstractPage;
 import utlis.Action;
 import utlis.Logs;
+import utlis.RandomListSelect;
+import utlis.reflectionHelper.Reflection;
 
 import static utlis.screenshots.Screenshots.screenshot;
 
@@ -53,5 +62,37 @@ public class CareerPageSteps {
     }
 
 
+
+
+    @When("^user fills in name = \"(.*)\",Old = \"(.*)\",Phone = \"(.*)\", Email = \"(.*)\"$")
+    public void userFillsInNameOldPhoneEmail(String name, String old, String phone, String mail) throws IllegalAccessException {
+        Reflection.getElement((AbstractPage) ScenarioContext.get(Keys.CURRENT_PAGE),"nameField").sendKeys(name);
+        Reflection.getElement((AbstractPage) ScenarioContext.get(Keys.CURRENT_PAGE),"oldField").sendKeys(old);
+        Reflection.getElement((AbstractPage) ScenarioContext.get(Keys.CURRENT_PAGE),"phoneField").sendKeys(phone);
+        Reflection.getElement((AbstractPage) ScenarioContext.get(Keys.CURRENT_PAGE),"mailField").sendKeys(mail);
+
+    }
+
+    @And("^choose some optional checkBoxes$")
+    public void chooseSomeOptionalCheckBoxes() throws IllegalAccessException {
+        action.RestaurantJobsListRandom();
+        screenshot("Restaurant Job List checkboxes");
+        Logs.logger.info("clicks on Restaurant Job List checkbox ");
+        Reflection.getElement((AbstractPage) ScenarioContext.get(Keys.CURRENT_PAGE),"factoryTabButton").click();
+        action.FactoryJobsListRandom();
+        screenshot("Factory Job List checkboxes");
+        Logs.logger.info("clicks on Factory Job List checkbox ");
+
+
+    }
+
+    @Then("^all inserted information is displayed in fields$")
+    public void allInsertedInformationIsDisplayedInFields() throws IllegalAccessException {
+        Assert.assertNotNull(Reflection.getElement((AbstractPage) ScenarioContext.get(Keys.CURRENT_PAGE),"nameField").getText());
+        Assert.assertNotNull(Reflection.getElement((AbstractPage) ScenarioContext.get(Keys.CURRENT_PAGE),"oldField").getText());
+        Assert.assertNotNull(Reflection.getElement((AbstractPage) ScenarioContext.get(Keys.CURRENT_PAGE),"phoneField").getText());
+        Assert.assertNotNull(Reflection.getElement((AbstractPage) ScenarioContext.get(Keys.CURRENT_PAGE),"mailField").getText());
+
+    }
 }
 

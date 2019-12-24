@@ -4,7 +4,7 @@ Feature: Breakfast order
 
   Background:
     Given "HomePage" is opened
-  Scenario:Verify warning message than select a random dish from 11-00 AM to 7-00 AM
+  Scenario:Verify time restriction for breakfast from 11-00 AM to 7-00 AM
     When user clicks on "menu" button
     Then Menu appears
     When  user clicks on "specials" button

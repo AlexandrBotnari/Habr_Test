@@ -47,7 +47,7 @@ public class ShoppingCartDropDownMenuPageSteps {
         int currentQuantity = Integer.parseInt(cartPage.getQuantitty().getAttribute("innerHTML"));
         quantity = quantity - 1;
         Assert.assertEquals(quantity, currentQuantity);
-Logs.logger.info("The product quantity changed");
+Logs.logger.info("The product quantity changed to one less");
         screenshot("The product quantity changed");
 
     }
@@ -58,7 +58,7 @@ Logs.logger.info("The product quantity changed");
         int currentQuantity = Integer.parseInt(cartPage.getQuantitty().getAttribute("innerHTML"));
         quantity = quantity + 1;
         Assert.assertEquals(quantity, currentQuantity);
-        Logs.logger.info("The product quantity changed");
+        Logs.logger.info("The product quantity changed to one more");
         screenshot("The product quantity changed");
     }
 }
