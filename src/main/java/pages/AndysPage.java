@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 @Getter
 public class AndysPage extends AbstractPage {
+
     @FindBy(xpath = "//ul[@class='verlist__col']//a[contains(text(),'We are')]")
     private WebElement WeAreLookingForTasters;
     @FindBy(xpath = "//ul[@class='verlist__col']//a[contains(text(),'Program')]")

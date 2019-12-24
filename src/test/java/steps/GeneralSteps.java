@@ -22,7 +22,7 @@ public class GeneralSteps {
 
 
 
-    Reflection reflection = new Reflection();
+
 
     public static String getUrl() {
         return Driver.getInstance().getDriver().getCurrentUrl();
