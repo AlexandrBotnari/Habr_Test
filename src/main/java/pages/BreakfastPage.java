@@ -5,12 +5,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 @Getter
-public class BreakfastPage extends AbstractPage {
+public class BreakfastPage extends AndysPage {
     @FindBy(xpath = "//div[@class='product__alert v1']")
     private WebElement warMes;
     @FindBy(xpath = "//div[@class='product__buy add_to_cart']")
     private WebElement order;
-    private String message = "This dish is available for order from 07:00 to 11:00";
+    @FindBy(xpath = "//div[@class='bag__count cart_count']")
+    private WebElement cartIndex;
 
     public BreakfastPage() {
         super();

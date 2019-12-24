@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 
 @Getter
 @Setter
-public class CorporateClientPage extends AbstractPage {
+public class CorporateClientPage extends AndysPage {
     public CorporateClientPage() {
         super();
     }

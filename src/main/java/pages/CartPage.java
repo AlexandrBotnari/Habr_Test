@@ -10,7 +10,7 @@ import java.util.List;
 @Getter
 @Setter
 
-public class CartPage extends AbstractPage{
+public class CartPage extends AndysPage{
 
     public CartPage() {
         super();

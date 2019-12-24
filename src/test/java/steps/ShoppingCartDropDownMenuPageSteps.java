@@ -1,5 +1,6 @@
 package steps;
 
+import browser.Driver;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import org.junit.Assert;
@@ -9,15 +10,13 @@ import pages.HomePage;
 import pages.ShoppingCartDropDownMenuPage;
 import utlis.Logs;
 
-import static browser.Driver.getDriver;
 import static utlis.screenshots.Screenshots.screenshot;
 
-public class ShoppingCartDropDownMenuPage_Steps {
+public class ShoppingCartDropDownMenuPageSteps {
 
     protected int quantity;
     ShoppingCartDropDownMenuPage sCDDMP = new ShoppingCartDropDownMenuPage();
     HomePage homePage = new HomePage();
-    Actions actions = new Actions(getDriver());
     CartPage cartPage = new CartPage();
 
     @Given("^any product are added in basket$")
@@ -48,7 +47,7 @@ public class ShoppingCartDropDownMenuPage_Steps {
         int currentQuantity = Integer.parseInt(cartPage.getQuantitty().getAttribute("innerHTML"));
         quantity = quantity - 1;
         Assert.assertEquals(quantity, currentQuantity);
-Logs.logger.info("The product quantity changed");
+Logs.logger.info("The product quantity changed to one less");
         screenshot("The product quantity changed");
 
     }
@@ -59,7 +58,7 @@ Logs.logger.info("The product quantity changed");
         int currentQuantity = Integer.parseInt(cartPage.getQuantitty().getAttribute("innerHTML"));
         quantity = quantity + 1;
         Assert.assertEquals(quantity, currentQuantity);
-        Logs.logger.info("The product quantity changed");
+        Logs.logger.info("The product quantity changed to one more");
         screenshot("The product quantity changed");
     }
 }

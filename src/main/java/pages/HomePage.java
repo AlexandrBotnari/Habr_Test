@@ -5,13 +5,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 @Getter
-public class HomePage extends AbstractPage {
+public class HomePage extends AndysPage {
 
     @FindBy(xpath = "//button[@class='button button_serv js-delivery-menu']")
     private WebElement menu;
     @FindBy(xpath = "//div[@class='bag__count cart_count']")
     private WebElement cartCounter;
-
     @FindBy(xpath = "//div[@class='modal-menu__content']")
     private WebElement menumap;
     @FindBy(xpath = "//a[@class='selcount__action selcount__minus']")

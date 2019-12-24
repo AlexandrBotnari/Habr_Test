@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 @Getter
-public class ContactsPage extends AbstractPage {
+public class ContactsPage extends AndysPage {
 
     @FindBy(xpath = "//div[@class='section-header']")
     private WebElement contactsHeader;

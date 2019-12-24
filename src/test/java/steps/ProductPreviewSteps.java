@@ -7,7 +7,7 @@ import utlis.Logs;
 
 import static utlis.screenshots.Screenshots.screenshot;
 
-public class ProductPreview_Steps {
+public class ProductPreviewSteps {
 
 
     Action action = new Action();

@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 @Getter
-public class SpecialsPage extends AbstractPage {
+public class SpecialsPage extends AndysPage {
     @FindBy(xpath = "//a[contains(text(),'Breakfast')]")
     private WebElement breakfast;
 

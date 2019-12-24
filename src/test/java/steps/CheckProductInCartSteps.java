@@ -9,7 +9,7 @@ import utlis.Logs;
 
 import static utlis.screenshots.Screenshots.screenshot;
 
-public class CheckProductInCart_Steps {
+public class CheckProductInCartSteps {
 
     Action action = new Action();
     CartPage cartPage = new CartPage();
@@ -19,7 +19,7 @@ public class CheckProductInCart_Steps {
     public void RandomProductAddedToCart() {
         action.GetRandomCategory();
         action.GetRandomProduct();
-        Logs.logger.info("Adds random product to cart ");
+        Logs.logger.info("Adds random product to cart");
     }
 
     @Then("^Removes one product from cart$")

@@ -3,7 +3,7 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class AccountPage extends AbstractPage {
+public class AccountPage extends AndysPage {
     @FindBy(xpath = "//div[@class='invback']")
     private WebElement accountForm;
 

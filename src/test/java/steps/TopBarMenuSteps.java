@@ -11,7 +11,7 @@ import utlis.Logs;
 import static utlis.screenshots.Screenshots.screenshot;
 
 @Getter
-public class TopBarMenu_Steps {
+public class TopBarMenuSteps {
 
     FeedbackPage feedbackPage = new FeedbackPage();
     ContactsPage contactsPage = new ContactsPage();

@@ -1,3 +1,4 @@
+@DemoRun
 @Alex
 Feature: User look through services information
 

@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 @Getter
-public class KidsPartiesPage extends AbstractPage {
+public class KidsPartiesPage extends AndysPage {
 
     public KidsPartiesPage() {
         super();

@@ -1,6 +1,8 @@
 package steps;
 
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
+import org.joda.time.LocalTime;
 import org.junit.Assert;
 import pages.BreakfastPage;
 import utlis.Logs;
@@ -10,18 +12,23 @@ import static utlis.screenshots.Screenshots.screenshot;
 public class BreakfastSteps {
 
     BreakfastPage breakfastPage = new BreakfastPage();
+    String cartStatus = breakfastPage.getCartIndex().getText();
 
-    @Then("^warning message \"([^\"]*)\" is displayed$")
-    public boolean warningMessageIsDisplayed(String message) {
-        Logs.logger.info("Warning message is displayed");
-        Assert.assertTrue(breakfastPage.getWarMes().isEnabled());
-        if (message == breakfastPage.getMessage()) {
-            screenshot("warning message");
-            return true;
-        } else {
-            screenshot("warning message");
-            return false;
+
+    @Then("^validate time restriction for breakfast$")
+    public void validateTimeRestrictionForBreakfast() {
+        final LocalTime before = new LocalTime(7, 0, 0, 0);
+        final LocalTime after = new LocalTime(11, 0, 0, 0);
+        LocalTime currentTime = new LocalTime();
+        if(currentTime.isAfter(before) && currentTime.isBefore(after)){
+            Assert.assertNotEquals(cartStatus,breakfastPage.getCartIndex().getText());
+            Logs.logger.info("Breakfast added to cart at: " + currentTime + "| Allowed time for adding is between: " + before + " and " + after);
         }
+        else {
+            Assert.assertEquals(cartStatus,breakfastPage.getCartIndex().getText());
+            Logs.logger.info("Time restriction - Allowed time for adding is between: " + before + " and " + after);
+        }
+
     }
 
 

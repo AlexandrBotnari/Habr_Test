@@ -8,14 +8,16 @@ import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 
 public class Reflection {
+//                   generic
     public static <T extends AbstractPage> T getPage(String name) throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
-        Class<?> page = Class.forName("pages." + name);
-        return (T) page.getConstructor().newInstance();
+        Class<?> page = Class.forName("pages." + name);//packeg search
+        return (T) page.getConstructor().newInstance();//creates page
 
     }
 
+
     public static WebElement getElement(AbstractPage page, String elementName) throws IllegalAccessException {
-        Field[] fields = FieldUtils.getAllFields(page.getClass());
+        Field[] fields = FieldUtils.getAllFields(page.getClass());// Fields
 
         for (Field field : fields) {
             if (field.getName().equals(elementName)) {

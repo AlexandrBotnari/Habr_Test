@@ -7,12 +7,12 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 @Getter
-public class MenuPage extends AbstractPage {
+public class MenuPage extends AndysPage {
     public MenuPage() {
         super();
     }
 
-    @FindBy(xpath = "//div[@class='modal-menu modal-menu_open']//a[*]")
+    @FindBy(xpath = "//div[@class='modal-menu modal-menu_open']//a")
     private List<WebElement> menuList;
 
     @FindBy(xpath = "//div[@class='product__img show_order_win']")

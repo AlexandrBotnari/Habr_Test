@@ -1,9 +1,10 @@
+@DemoRun
 @Alex
 Feature: Order lunch from Andy's pizza
 
   Background:
     Given "HomePage" is opened
-  @LunchABPosistive
+  @LunchAB
   Scenario:User opens lunch page
     When user navigate on "menu"
     And user clicks on "menu" button
@@ -12,6 +13,8 @@ Feature: Order lunch from Andy's pizza
     Then "SpecialsPage" is opened
     When user clicks on "lunch" button
     Then "LunchPage" is opened
+    When user clicks on "order" button
+    Then validate time restriction
 
 
 

@@ -6,6 +6,7 @@ import java.util.Map;
 
 
 public class ScenarioContext {
+
     private static Map<Keys, Object> scenarioContext = new HashMap<>();
 
     public ScenarioContext() {

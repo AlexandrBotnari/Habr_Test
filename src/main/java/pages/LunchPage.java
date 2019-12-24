@@ -6,21 +6,20 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 @Getter
-public class LunchPage extends AbstractPage{
+public class LunchPage extends AndysPage{
     public LunchPage() {
         super();
     }
 
-    @FindBy(xpath = "//div[@class='product__header']")
-    private List<WebElement> productLunchNames;
 
-    @FindBy(xpath = "//div[@class='product__buy add_to_cart']")
-    private WebElement buyProductLunch;
+    @FindBy(xpath = "//div[contains(@class,'product__buy')]")
+    private WebElement order;
 
     @FindBy(xpath = "//div[@class='product__date']")
-    private List<WebElement> productDateLunch;
-    @FindBy(xpath = "//a[@class= 'button button_end' ]")
-    private WebElement orderButton;
+    private WebElement productDateLunch;
+
+@FindBy(xpath = "//div[@class='bag__count cart_count']")
+private WebElement cartIndex;
 
     @Override
     public String getUrl() {

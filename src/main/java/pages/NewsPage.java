@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 @Getter
-public class NewsPage extends AbstractPage {
+public class NewsPage extends AndysPage {
     @FindBy(xpath = "//a[@class='button button_cr']")
     private WebElement backToNews;
 

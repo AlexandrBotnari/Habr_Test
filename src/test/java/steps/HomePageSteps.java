@@ -1,13 +1,14 @@
 package steps;
 
 
+import browser.Driver;
 import cucumber.api.java.en.Then;
+import cucumber.api.java.uk.Нехай;
 import lombok.Getter;
 import org.junit.Assert;
 import pages.HomePage;
 import utlis.Logs;
 
-import static browser.Driver.getDriver;
 import static utlis.screenshots.Screenshots.screenshot;
 
 @Getter
@@ -15,19 +16,19 @@ public class HomePageSteps {
 
     HomePage homePage = new HomePage();
 
+
     @Then("^current \"(.*)\" field changes to chosen$")
     public void currentLocationFieldChangesToChosen(String location) throws Throwable {
         Thread.sleep(2000);
 
         if (location.equals("chisinau")) {
             location = "210-210";
-            Assert.assertTrue(homePage.getCityCurrent().getText().toLowerCase().endsWith(location));
+            Assert.assertTrue(homePage.getCityCurrent().getText().toLowerCase().contains(location));
         } else
 
-            Assert.assertTrue(homePage.getCityCurrent().getText().toLowerCase().startsWith(location));
+            Assert.assertTrue(homePage.getCityCurrent().getText().toLowerCase().contains(location));
         Logs.logger.info("Assert location changed");
         screenshot("Location changed");
-        finalize();
     }
 
     @Then("^drop down menu appears$")
@@ -40,12 +41,19 @@ public class HomePageSteps {
 
 
     @Then("^page changes language to \"(.*)\"$")
-    public void changeLanguageToLanguage(String language) throws Throwable {
-        Assert.assertTrue(
-                getDriver().getCurrentUrl().endsWith(language.toLowerCase()));
-        Logs.logger.info("Assert language has changes (by url)");
-        screenshot("language changet to"+ language);
-        finalize();
+    public void changeLanguageToLanguage(String language) {
+        Assert.assertTrue(Driver.getInstance().getDriver().getCurrentUrl().endsWith(language.toLowerCase()));
+
+        if (language.equals("Ru")) {
+            Assert.assertEquals("Доставка", homePage.getDeliveryButton().getText());
+            Assert.assertEquals("Отзывы", homePage.getFeedbackButton().getText());
+        }else {
+            Assert.assertEquals("Livrare", homePage.getDeliveryButton().getText());
+            Assert.assertEquals("Feedback", homePage.getFeedbackButton().getText());
+        }
+
+        Logs.logger.info("Language changed to " + language);
+        screenshot("Language changed to " + language);
     }
 
 
