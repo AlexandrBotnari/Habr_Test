@@ -2,18 +2,16 @@ package steps;
 
 import Context.Keys;
 import Context.ScenarioContext;
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
 import pages.AbstractPage;
-import utlis.Action;
-import utlis.Logs;
-import utlis.RandomListSelect;
-import utlis.reflectionHelper.Reflection;
+import utils.Action;
+import utils.Logs;
+import utils.reflectionHelper.Reflection;
 
-import static utlis.screenshots.Screenshots.screenshot;
+import static utils.screenshots.Screenshots.screenshot;
 
 public class CareerPageSteps {
     Action action = new Action();

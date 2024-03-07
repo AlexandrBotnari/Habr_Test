@@ -4,7 +4,7 @@ import cucumber.api.java.en.When;
 import org.junit.Assert;
 import pages.LoginPage;
 
-import static utlis.screenshots.Screenshots.screenshot;
+import static utils.screenshots.Screenshots.screenshot;
 
 ;
 

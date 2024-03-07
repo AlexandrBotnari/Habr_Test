@@ -1,4 +1,4 @@
-package utlis.screenshots;
+package utils.screenshots;
 
 import browser.Driver;
 import cucumber.api.Scenario;

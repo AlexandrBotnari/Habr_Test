@@ -4,10 +4,10 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import org.junit.Assert;
 import pages.CartPage;
-import utlis.Action;
-import utlis.Logs;
+import utils.Action;
+import utils.Logs;
 
-import static utlis.screenshots.Screenshots.screenshot;
+import static utils.screenshots.Screenshots.screenshot;
 
 public class CheckProductInCartSteps {
 

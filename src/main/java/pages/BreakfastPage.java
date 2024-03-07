@@ -13,7 +13,7 @@ public class BreakfastPage extends AndysPage {
     @FindBy(xpath = "//div[@class='bag__count cart_count']")
     private WebElement cartIndex;
 
-    public BreakfastPage() {
+    public BreakfastPage(){
         super();
     }
 

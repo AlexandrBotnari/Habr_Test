@@ -1,19 +1,18 @@
-package utlis;
+package utils;
 
 import lombok.Getter;
-import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import pages.*;
-import utlis.screenshots.Screenshots;
+import utils.screenshots.Screenshots;
 
 @Getter
 public class Action {
 
-    HomePage homePage = new HomePage();
+
     CartPage cartPage = new CartPage();
     MenuPage menuPage = new MenuPage();
     CareerPage careerPage = new CareerPage();
-    RestaurantsPage restaurantsPage = new RestaurantsPage();
+
 
 
     public void GetRandomCategory() {
@@ -21,10 +20,6 @@ public class Action {
         RandomListSelect.GetRandomFromList(menuPage.getMenuList()).click();
     }
 
-    public void GetRandomFilter() {
-        Logs.logger.info("Gets Random Filter");
-        RandomListSelect.GetRandomFromList(restaurantsPage.getFilter()).click();
-    }
 
     public void GetRandomProduct() {
         Logs.logger.info("Gets Random Product");

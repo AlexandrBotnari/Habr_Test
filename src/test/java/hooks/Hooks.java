@@ -6,8 +6,8 @@ import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import lombok.Getter;
-import utlis.Logs;
-import utlis.screenshots.Screenshots;
+import utils.Logs;
+import utils.screenshots.Screenshots;
 
 
 @Getter

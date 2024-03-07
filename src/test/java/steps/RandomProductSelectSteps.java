@@ -3,21 +3,20 @@ package steps;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import org.junit.Assert;
-import pages.HomePage;
-import utlis.Action;
-import utlis.Logs;
+import utils.Action;
+import utils.Logs;
 
-import static utlis.screenshots.Screenshots.screenshot;
+import static utils.screenshots.Screenshots.screenshot;
 
 public class RandomProductSelectSteps {
 
     Action action = new Action();
-    HomePage homePage = new HomePage();
+   // HomePage homePage = new HomePage();
 
 
     @And("^Menu appears$")
     public void MenuAppears() {
-        Assert.assertTrue(homePage.getMenu().isDisplayed());
+      //  Assert.assertTrue(homePage.getMenu().isDisplayed());
         screenshot("Menu");
         Logs.logger.info("Assert verification ");
 

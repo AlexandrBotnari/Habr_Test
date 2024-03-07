@@ -16,16 +16,13 @@ public class CartPage extends AndysPage{
         super();
     }
 
+    @Getter
     @FindBy(xpath = "//div[@class='prodlist']//a[@class='link']")
     private  List<WebElement> removeFromCart;
     @FindBy(xpath = "//div[contains(@class,'selcount__current')]")
     private WebElement quantitty;
     @FindBy(xpath = "//div[@class='dbinfo__name']")
     private WebElement informativeMessage;
-
-    public List<WebElement> getRemoveFromCart() {
-        return removeFromCart;
-    }
 
     @Override
     public String getUrl() {

@@ -1,13 +1,10 @@
 package steps;
 
-import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import org.joda.time.LocalTime;
 import org.junit.Assert;
 import pages.BreakfastPage;
-import utlis.Logs;
-
-import static utlis.screenshots.Screenshots.screenshot;
+import utils.Logs;
 
 public class BreakfastSteps {
 

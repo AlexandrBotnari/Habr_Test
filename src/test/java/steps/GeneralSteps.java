@@ -9,19 +9,16 @@ import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import pages.AbstractPage;
-import utlis.Logs;
-import utlis.reflectionHelper.Reflection;
+import utils.Logs;
+import utils.reflectionHelper.Reflection;
 
 import java.lang.reflect.InvocationTargetException;
 
-import static utlis.screenshots.Screenshots.highLighterMethod;
-import static utlis.screenshots.Screenshots.screenshot;
+import static utils.screenshots.Screenshots.highLighterMethod;
+import static utils.screenshots.Screenshots.screenshot;
 
 
 public class GeneralSteps {
-
-
-
 
 
     public static String getUrl() {
@@ -33,7 +30,7 @@ public class GeneralSteps {
     @Then("^\"(.*)\" is opened$")
     public void isOpened(String pageName) throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
         AbstractPage page = Reflection.getPage(pageName);
-        Assert.assertEquals(getUrl(),page.getUrl());
+        Assert.assertEquals(getUrl(), page.getUrl());
         ScenarioContext.set(Keys.CURRENT_PAGE, page);
         screenshot(pageName);
         Logs.logger.info(page.getClass().getSimpleName() + "is opened");
@@ -56,10 +53,7 @@ public class GeneralSteps {
         webElement.click();
 
 
-
-
     }
-
 
 
     @Then("^\"(.*)\" menu services appears$")

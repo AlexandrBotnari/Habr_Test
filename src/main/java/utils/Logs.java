@@ -1,6 +1,5 @@
-package utlis;
+package utils;
 
-import browser.PropertyReader;
 import lombok.Getter;
 import org.apache.log4j.Logger;
 
